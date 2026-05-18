@@ -1,0 +1,691 @@
+<html>
+<head>
+<title>TestNG:  CucumberTests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>CucumberTests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>12/14/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun May 17 14:39:09 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>275 seconds (275858 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download reports", "Muhindhar_16-05-2026_Downloading report from the front office"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:7343}, goog:processID: 31404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:7343/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff06bbf23305045c9924746c7fafbe5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace597593052", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace597593052'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:7343}, goog:processID: 31404, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:7343/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ff06bbf23305045c9924746c7fafbe5
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div></td>
+<td>19</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add complaint using excel data", "Muhindhar_16-05-2026_Add a complaint in the front office page"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:3060}, goog:processID: 18388, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:3060/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 201deb16efcdcb564a8346b324e0eab1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FoComplaint.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace396437826", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace396437826'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:3060}, goog:processID: 18388, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:3060/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 201deb16efcdcb564a8346b324e0eab1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FoComplaint.feature:8)
+</pre></div></td>
+<td>13</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at definitions.LoginStepDefinition.the_user_should_be_redirected_to_the_dashboard(LoginStepDefinition.java:85)
+	at ✽.the user should be redirected to the dashboard(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/login/login.feature:48)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace682917852", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace682917852'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at definitions.LoginStepDefinition.the_user_should_be_redirected_to_the_dashboard(LoginStepDefinition.java:85)
+	at ✽.the user should be redirected to the dashboard(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/login/login.feature:48)
+</pre></div></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download appointment filter in different formats", "Muhindhar_13-05-2026_Downloading the PDF (Printing)"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (606, 86). Other element would receive the click: &lt;a data-target=&quot;modal&quot; data-placement=&quot;bottom&quot; data-toggle=&quot;tooltip&quot; href=&quot;#&quot; id=&quot;beddata&quot; data-original-title=&quot;Bed Status&quot; data-loading-text=&quot;&amp;lt;i class=&apos;fa fa-spinner fa-spin &apos;&amp;gt;&amp;lt;/i&amp;gt; Loading...&quot; onclick=&quot;getbedstatus()&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8aeaf74d6367fd530be32a1716461d10, clickElement {id=f.67AD9E118178338C1B96578547ABAABA.d.A586D5CE7E1D4C5A4D0ABA6602E8701E.e.319}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10455}, goog:processID: 37216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10455/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8aeaf74d6367fd530be32a1716461d10)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[3]]
+Session ID: 8aeaf74d6367fd530be32a1716461d10
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.oldapp(DownloadPdfAction.java:50)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:36)
+	at ✽.user clicks on &quot;Old Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace580569075", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace580569075'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (606, 86). Other element would receive the click: &lt;a data-target=&quot;modal&quot; data-placement=&quot;bottom&quot; data-toggle=&quot;tooltip&quot; href=&quot;#&quot; id=&quot;beddata&quot; data-original-title=&quot;Bed Status&quot; data-loading-text=&quot;&amp;lt;i class=&apos;fa fa-spinner fa-spin &apos;&amp;gt;&amp;lt;/i&amp;gt; Loading...&quot; onclick=&quot;getbedstatus()&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8aeaf74d6367fd530be32a1716461d10, clickElement {id=f.67AD9E118178338C1B96578547ABAABA.d.A586D5CE7E1D4C5A4D0ABA6602E8701E.e.319}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10455}, goog:processID: 37216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10455/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8aeaf74d6367fd530be32a1716461d10)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[3]]
+Session ID: 8aeaf74d6367fd530be32a1716461d10
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.oldapp(DownloadPdfAction.java:50)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:36)
+	at ✽.user clicks on &quot;Old Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div></td>
+<td>8</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate old appointment filter", "Muhindhar_13-05-2026_Appointment Filter Functionality"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (606, 86). Other element would receive the click: &lt;a data-target=&quot;modal&quot; data-placement=&quot;bottom&quot; data-toggle=&quot;tooltip&quot; href=&quot;#&quot; id=&quot;beddata&quot; data-original-title=&quot;Bed Status&quot; data-loading-text=&quot;&amp;lt;i class=&apos;fa fa-spinner fa-spin &apos;&amp;gt;&amp;lt;/i&amp;gt; Loading...&quot; onclick=&quot;getbedstatus()&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [57fa00624187fc6c825f255cde1e65a7, clickElement {id=f.295157508C475A7A0DB3A29BE7DA5A98.d.A12C821F06EA2610B5AC1E3CB045773C.e.332}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10938}, goog:processID: 21912, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10938/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (57fa00624187fc6c825f255cde1e65a7)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[3]]
+Session ID: 57fa00624187fc6c825f255cde1e65a7
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clickoldapp(AppointmentFilterAction.java:49)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_old_appointment_filter(AppointmentFilterDef.java:85)
+	at ✽.user clicks on the Old Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:24)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1165390908", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1165390908'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (606, 86). Other element would receive the click: &lt;a data-target=&quot;modal&quot; data-placement=&quot;bottom&quot; data-toggle=&quot;tooltip&quot; href=&quot;#&quot; id=&quot;beddata&quot; data-original-title=&quot;Bed Status&quot; data-loading-text=&quot;&amp;lt;i class=&apos;fa fa-spinner fa-spin &apos;&amp;gt;&amp;lt;/i&amp;gt; Loading...&quot; onclick=&quot;getbedstatus()&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [57fa00624187fc6c825f255cde1e65a7, clickElement {id=f.295157508C475A7A0DB3A29BE7DA5A98.d.A12C821F06EA2610B5AC1E3CB045773C.e.332}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10938}, goog:processID: 21912, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10938/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (57fa00624187fc6c825f255cde1e65a7)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[3]]
+Session ID: 57fa00624187fc6c825f255cde1e65a7
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clickoldapp(AppointmentFilterAction.java:49)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_old_appointment_filter(AppointmentFilterDef.java:85)
+	at ✽.user clicks on the Old Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:24)
+</pre></div></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at definitions.LoginStepDefinition.the_user_should_be_redirected_to_the_dashboard(LoginStepDefinition.java:85)
+	at ✽.the user should be redirected to the dashboard(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/login/login.feature:48)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace431309476", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace431309476'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at definitions.LoginStepDefinition.the_user_should_be_redirected_to_the_dashboard(LoginStepDefinition.java:85)
+	at ✽.the user should be redirected to the dashboard(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/login/login.feature:48)
+</pre></div></td>
+<td>5</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download appointment filter in different formats", "Muhindhar_13-05-2026_Downloading the PDF (Printing)"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;active&quot;&gt;...&lt;/li&gt; is not clickable at point (290, 86). Other element would receive the click: &lt;nav class=&quot;navbar navbar-static-top&quot; role=&quot;navigation&quot;&gt;...&lt;/nav&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [61b26b95a25ec8b75d0491c1f4a9e8b5, clickElement {id=f.5B31715D94C008790E33AB73EADB6AB3.d.9A0F6097EAC5E7075F6F4E846F62676D.e.309}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:2062}, goog:processID: 21220, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:2062/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (61b26b95a25ec8b75d0491c1f4a9e8b5)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[1]]
+Session ID: 61b26b95a25ec8b75d0491c1f4a9e8b5
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.tdyapp(DownloadPdfAction.java:34)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:44)
+	at ✽.user clicks on &quot;Today Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1730114058", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1730114058'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;active&quot;&gt;...&lt;/li&gt; is not clickable at point (290, 86). Other element would receive the click: &lt;nav class=&quot;navbar navbar-static-top&quot; role=&quot;navigation&quot;&gt;...&lt;/nav&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [61b26b95a25ec8b75d0491c1f4a9e8b5, clickElement {id=f.5B31715D94C008790E33AB73EADB6AB3.d.9A0F6097EAC5E7075F6F4E846F62676D.e.309}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:2062}, goog:processID: 21220, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:2062/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (61b26b95a25ec8b75d0491c1f4a9e8b5)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[1]]
+Session ID: 61b26b95a25ec8b75d0491c1f4a9e8b5
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.tdyapp(DownloadPdfAction.java:34)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:44)
+	at ✽.user clicks on &quot;Today Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate today appointment filter", "Muhindhar_13-05-2026_Appointment Filter Functionality"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;active&quot;&gt;...&lt;/li&gt; is not clickable at point (290, 86). Other element would receive the click: &lt;nav class=&quot;navbar navbar-static-top&quot; role=&quot;navigation&quot;&gt;...&lt;/nav&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [afe45a7379cc503e62e7d02667cc711f, clickElement {id=f.B2BAE508510719300EDFA6121FD430E8.d.88E3C3D6C49D3F321DC555ABC0CD33C1.e.318}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9134}, goog:processID: 29960, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9134/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (afe45a7379cc503e62e7d02667cc711f)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[1]]
+Session ID: afe45a7379cc503e62e7d02667cc711f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clicktdyapp(AppointmentFilterAction.java:39)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_today_appointment_filter(AppointmentFilterDef.java:53)
+	at ✽.user clicks on the Today Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:14)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1557170598", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1557170598'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;active&quot;&gt;...&lt;/li&gt; is not clickable at point (290, 86). Other element would receive the click: &lt;nav class=&quot;navbar navbar-static-top&quot; role=&quot;navigation&quot;&gt;...&lt;/nav&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [afe45a7379cc503e62e7d02667cc711f, clickElement {id=f.B2BAE508510719300EDFA6121FD430E8.d.88E3C3D6C49D3F321DC555ABC0CD33C1.e.318}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:9134}, goog:processID: 29960, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:9134/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (afe45a7379cc503e62e7d02667cc711f)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[1]]
+Session ID: afe45a7379cc503e62e7d02667cc711f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clicktdyapp(AppointmentFilterAction.java:39)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_today_appointment_filter(AppointmentFilterDef.java:53)
+	at ✽.user clicks on the Today Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:14)
+</pre></div></td>
+<td>11</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate mandatory field error messages", "Muhindhar_16-05-2026_To check the call log in the front office module"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1700}, goog:processID: 13620, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1700/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b4cf842798b11035e3132ef9a48b060
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FrontOfcCallLog.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2105627289", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2105627289'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:1700}, goog:processID: 13620, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:1700/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2b4cf842798b11035e3132ef9a48b060
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FrontOfcCallLog.feature:9)
+</pre></div></td>
+<td>15</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download reports", "Muhindhar_16-05-2026_Downloading report from the front office"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11705}, goog:processID: 39136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11705/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e09d73925e66f8dd565e76645bc87c1a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace909419148", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace909419148'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11705}, goog:processID: 39136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11705/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e09d73925e66f8dd565e76645bc87c1a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div></td>
+<td>15</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download reports", "Muhindhar_16-05-2026_Downloading report from the front office"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:3691}, goog:processID: 40600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:3691/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b920990260e3e7c9e982d8207473dc7f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1638278684", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1638278684'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:3691}, goog:processID: 40600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:3691/devtool..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b920990260e3e7c9e982d8207473dc7f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/ReportFrontOfc.feature:8)
+</pre></div></td>
+<td>18</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Download appointment filter in different formats", "Muhindhar_13-05-2026_Downloading the PDF (Printing)"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (452, 86). Other element would receive the click: &lt;div class=&quot;pull-right&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [18dbd1716ffe26f44239943be9a25561, clickElement {id=f.99EE60AD8EC8A6718B52BFF2BE6348A9.d.BE0466044D20C15CE26E427B88B6139E.e.320}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11917}, goog:processID: 2064, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11917/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (18dbd1716ffe26f44239943be9a25561)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[2]]
+Session ID: 18dbd1716ffe26f44239943be9a25561
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.upcapp(DownloadPdfAction.java:42)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:40)
+	at ✽.user clicks on &quot;Upcoming Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace109238425", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace109238425'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (452, 86). Other element would receive the click: &lt;div class=&quot;pull-right&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [18dbd1716ffe26f44239943be9a25561, clickElement {id=f.99EE60AD8EC8A6718B52BFF2BE6348A9.d.BE0466044D20C15CE26E427B88B6139E.e.320}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:11917}, goog:processID: 2064, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:11917/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (18dbd1716ffe26f44239943be9a25561)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[2]]
+Session ID: 18dbd1716ffe26f44239943be9a25561
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at actions.BaseAction.click(BaseAction.java:41)
+	at actions.DownloadPdfAction.upcapp(DownloadPdfAction.java:42)
+	at definitions.DownloadPdfDef.user_clicks_on_filter(DownloadPdfDef.java:40)
+	at ✽.user clicks on &quot;Upcoming Appointment&quot; filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/DownloadPdf.feature:12)
+</pre></div></td>
+<td>8</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate upcoming appointment filter", "Muhindhar_13-05-2026_Appointment Filter Functionality"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (452, 86). Other element would receive the click: &lt;div class=&quot;pull-right&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b804cada3d7dae1b940eb79b187fb324, clickElement {id=f.6731A0771248E983D7F9E9593BAEC09B.d.06149DCEDEA9D53AE5C093F28674FE2E.e.319}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10499}, goog:processID: 37324, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10499/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b804cada3d7dae1b940eb79b187fb324)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[2]]
+Session ID: b804cada3d7dae1b940eb79b187fb324
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clickupapp(AppointmentFilterAction.java:44)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_upcoming_appointment_filter(AppointmentFilterDef.java:69)
+	at ✽.user clicks on the Upcoming Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:19)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1215823242", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1215823242'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li&gt;...&lt;/li&gt; is not clickable at point (452, 86). Other element would receive the click: &lt;div class=&quot;pull-right&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=148.0.7778.168)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b804cada3d7dae1b940eb79b187fb324, clickElement {id=f.6731A0771248E983D7F9E9593BAEC09B.d.06149DCEDEA9D53AE5C093F28674FE2E.e.319}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:10499}, goog:processID: 37324, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:10499/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b804cada3d7dae1b940eb79b187fb324)] -&gt; xpath: //ul[@class=&apos;nav nav-tabs navlistscroll&apos;]//li[2]]
+Session ID: b804cada3d7dae1b940eb79b187fb324
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy26.click(Unknown Source)
+	at actions.BaseAction.clickfb(BaseAction.java:49)
+	at actions.AppointmentFilterAction.clickupapp(AppointmentFilterAction.java:44)
+	at definitions.AppointmentFilterDef.user_clicks_on_the_upcoming_appointment_filter(AppointmentFilterDef.java:69)
+	at ✽.user clicks on the Upcoming Appointment filter(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/Appointmentfilter.feature:19)
+</pre></div></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "add outgoing call log", "Muhindhar_16-05-2026_To check the call log in the front office module"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:14980}, goog:processID: 42240, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:14980/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b92ccf9f96609c3d59c39270ae324bf0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FrontOfcCallLog.feature:9)
+</pre></div><a href='#' onClick='toggleBox("stack-trace642637714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace642637714'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //li[contains(@class,&apos;treeview&apos;)][12] to be clickable, but the element was not visible.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.167 (65db666ac2c..., userDataDir: C:\Users\MUHIND~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:14980}, goog:processID: 42240, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:14980/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b92ccf9f96609c3d59c39270ae324bf0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at actions.BaseAction.click(BaseAction.java:39)
+	at actions.CallLogFrontofcActions.frontofclink(CallLogFrontofcActions.java:34)
+	at definitions.CallLogfrontofc.user_navigates_to_the_front_office_link(CallLogfrontofc.java:36)
+	at ✽.user navigates to the front office link(file:///D:/Automation_Project/Automation-Testing-Project/src/test/resources/features/FrontOfcCallLog.feature:9)
+</pre></div></td>
+<td>19</td>
+<td>runner.TestRunner@742ff096</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with empty password", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>6</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with empty email and password", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>6</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>10</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with empty email", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>7</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>10</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid email and password", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid email and invalid password", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@742ff096</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify login functionality for multiple user roles", "M_VIGNESHWARAN_2026_05_05_SmartHospital_LoginFeature"</td>
+<td></td>
+<td>8</td>
+<td>runner.TestRunner@742ff096</td></tr>
+</table><p>
+</body>
+</html>
