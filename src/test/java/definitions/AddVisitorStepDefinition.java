@@ -89,7 +89,6 @@ public class AddVisitorStepDefinition {
 	}
 
 	@Then("mandatory field validation message should be displayed")
-
 	public boolean mandatory_field_validation_message_should_be_displayed() {
 
 		Assert.assertEquals(
