@@ -9,39 +9,37 @@ import pages.OPDPage;
 import utilities.HelperClass;
 
 public class OPD_SearchActions extends BaseAction {
-	OPDPage opdPage;
 	WebDriverWait wait;
 	
 	public OPD_SearchActions(WebDriver driver) {
 		super(driver);
-		opdPage = new OPDPage(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
 	public void searchPatient(String patientName) {
 		HelperClass.logger.info("Passing patient name");
-		sendKeys(opdPage.searchBox,patientName);
+		sendKeys(OPDPage.getSearchBox(),patientName);
 	}
 	
 	public void navigateToOPDPage() {
-		wait.until(ExpectedConditions.elementToBeClickable(opdPage.opdButton));
+		wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOpdButton()));
 		HelperClass.logger.info("clicking opd button");
-		jsClick(opdPage.opdButton);
+		jsClick(OPDPage.getOpdButton());
 		HelperClass.logger.info("clicking old opd tab");
-		wait.until(ExpectedConditions.elementToBeClickable(opdPage.oldOpdTab));
-		jsClick(opdPage.oldOpdTab);
+		wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOldOpdTab()));
+		jsClick(OPDPage.getOldOpdTab());
 	}
 	
 	public String verifySearchnameResult() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(opdPage.patientname));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(OPDPage.getPatientName()));
 	    HelperClass.logger.info("Getting patient name");
-	    return getText(opdPage.patientname);
+	    return getText(OPDPage.getPatientName());
 	}
 
 	public String verifySearchFailed(){
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(opdPage.searchFailed));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(OPDPage.getSearchFailed()));
 	    HelperClass.logger.info("Search failed");
-	    return getText(opdPage.searchFailed);
+	    return getText(OPDPage.getSearchFailed());
 	}
 }

@@ -7,8 +7,6 @@ import utilities.HelperClass;
 
 public class PostalActions extends BaseAction {
 
-	PostalPages pp;
-
 	WebDriver driver;
 
 	public PostalActions(WebDriver driver) {
@@ -17,58 +15,57 @@ public class PostalActions extends BaseAction {
 
 		this.driver = driver;
 
-		pp = new PostalPages();
 	}
 
 	public void clickrecp() {
 
 		HelperClass.logger.info("clicking receptionist button");
 
-		click(pp.recbtnfo);
+		click(PostalPages.getReceptionistButton());
 	}
 
 	public void clksign() {
 
 		HelperClass.logger.info("clicking sign in button");
 
-		click(pp.signinfo);
+		click(PostalPages.getSignInButton());
 	}
 
 	public void clickfrontoffice() {
 
 		HelperClass.logger.info("clicking front office");
 
-		click(pp.frontofc);
+		click(PostalPages.getFrontOffice());
 	}
 
 	public void clickpostal() {
 
 		HelperClass.logger.info("clicking postal button");
 
-		click(pp.postbtn);
+		click(PostalPages.getPostButton());
 	}
 
 	public void clickdispatch() {
 
 		HelperClass.logger.info("clicking dispatch button");
 
-		click(pp.dispatch);
+		click(PostalPages.getDispatch());
 	}
 
 	public void clickadddispatch() {
 
 		HelperClass.logger.info("clicking add dispatch button");
 
-		click(pp.adddispatch);
+		click(PostalPages.getAddDispatch());
 	}
 
 	public void enterdetails() {
 
 		try {
 
-			waitForClickable(pp.title);
+			waitForClickable(PostalPages.getTitle());
 
-			sendKeys(pp.title, "Automation Postal");
+			sendKeys(PostalPages.getTitle(), "Automation Postal");
 
 		}
 
@@ -82,13 +79,13 @@ public class PostalActions extends BaseAction {
 
 		HelperClass.logger.info("clicking save button");
 
-		click(pp.savebtn);
+		click(PostalPages.getSaveButton());
 	}
 
 	public boolean verifypostal() {
 
 		HelperClass.logger.info("verifying postal details");
 
-		return isDisplayed(pp.list);
+		return isDisplayed(PostalPages.getList());
 	}
 }

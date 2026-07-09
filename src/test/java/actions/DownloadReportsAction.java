@@ -8,11 +8,9 @@ import pages.DownloadPdfpage;
 import utilities.HelperClass;
 
 public class DownloadReportsAction extends BaseAction {
-	DownloadPdfpage dp;
 	WebDriver driver;
 	public DownloadReportsAction(WebDriver driver) {
 		super(driver);
-		dp = new DownloadPdfpage();
 		driver = HelperClass.getDriver();
 		this.driver = driver;
 	}
@@ -20,7 +18,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void clickrecp() {
 		try {
 			HelperClass.logger.info("clicking reception button");
-			jsClick(dp.recbtn);
+			jsClick(DownloadPdfpage.getReceptionistButton());
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +28,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void clicksign() {
 		try {
 			HelperClass.logger.info("clicking sign in button");
-			jsClick(dp.signin);
+			jsClick(DownloadPdfpage.getSignInButton());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -40,7 +38,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void clickappbtn() {
 		try {
 			HelperClass.logger.info("clicking appointment button");
-			jsClick(dp.appbtn);
+			jsClick(DownloadPdfpage.getAppointmentButton());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -50,7 +48,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void tdyapp() {
 		try {
 			HelperClass.logger.info("clicking today appointment button");
-			jsClick(dp.tdyapp);
+			jsClick(DownloadPdfpage.getTodayAppointment());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +58,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void tdyexcel() {
 		try {
 			HelperClass.logger.info("clicking excel format button");
-			jsClick(dp.tdyxcel);
+			jsClick(DownloadPdfpage.getTodayExcel());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -70,7 +68,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void upcapp() {
 		try {
 			HelperClass.logger.info("clicking upcoming application button");
-			jsClick(dp.upcapp);
+			jsClick(DownloadPdfpage.getUpcomingAppointment());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -80,7 +78,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void upcsv() {
 		try {
 			HelperClass.logger.info("clicking csv format button");
-			jsClick(dp.upcsv);
+			jsClick(DownloadPdfpage.getUpcomingCsv());
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -90,7 +88,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void oldapp() {
 		try {
 			HelperClass.logger.info("clicking old appointment button");
-			jsClick(dp.oldapp);
+			jsClick(DownloadPdfpage.getOldAppointment());
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -100,7 +98,7 @@ public class DownloadReportsAction extends BaseAction {
 	public void oldpdf() {
 		try {
 			HelperClass.logger.info("clicking pdf button");
-			jsClick(dp.oldpdf);
+			jsClick(DownloadPdfpage.getOldPdf());
 		}
 		catch (Exception e) {
 			e.printStackTrace();

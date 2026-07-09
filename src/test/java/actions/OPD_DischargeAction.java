@@ -14,23 +14,21 @@ import java.util.Map;
 public class OPD_DischargeAction {
 
     WebDriver driver;
-    OPDPage opdPage;
     WebDriverWait wait;
 
     public OPD_DischargeAction(WebDriver driver) {
         this.driver = driver;
-        this.opdPage = new OPDPage(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void clickPatientIDLink() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.revert)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.opdOutPatientNavLink)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getRevert())).click();
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOpdOutPatientNavLink())).click();
         
     }
 
     public void clickDischargeIcon() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.dischargeIcon)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getDischargeIcon())).click();
     }
 
     public void fillDischargeForm() throws Exception {
@@ -40,32 +38,32 @@ public class OPD_DischargeAction {
 
         // Date
         WebElement dateInput = wait.until(ExpectedConditions
-                .visibilityOfElementLocated(opdPage.dateField));
+                .visibilityOfElementLocated(OPDPage.getDateField()));
         dateInput.clear();
         dateInput.sendKeys(data.get("date"));
 
         // Reason 
         Select reasonSelect = new Select(
-                driver.findElement(opdPage.reasonDropDown));
+                driver.findElement(OPDPage.getReasonDropDown()));
         reasonSelect.selectByVisibleText(data.get("reason"));
 
         // Text areas
-        driver.findElement(opdPage.noteField).sendKeys(data.get("note"));
-        driver.findElement(opdPage.operationField).sendKeys(data.get("operation"));
-        driver.findElement(opdPage.diagnosisField).sendKeys(data.get("diagnosis"));
-        driver.findElement(opdPage.investigationField).sendKeys(data.get("investigation"));
+        driver.findElement(OPDPage.getNoteField()).sendKeys(data.get("note"));
+        driver.findElement(OPDPage.getOperationField()).sendKeys(data.get("operation"));
+        driver.findElement(OPDPage.getDiagnosisField()).sendKeys(data.get("diagnosis"));
+        driver.findElement(OPDPage.getInvestigationField()).sendKeys(data.get("investigation"));
     }
 
     public void clickSaveDischargeButton() {
         wait.until(ExpectedConditions
-                .elementToBeClickable(opdPage.saveDischargeButton))
+                .elementToBeClickable(OPDPage.getSaveDischargeButton()))
                 .click();
     }
 
     public boolean isSuccessMessageDisplayed() {
         try {
             return wait.until(ExpectedConditions
-                    .visibilityOfElementLocated(opdPage.successMessage))
+                    .visibilityOfElementLocated(OPDPage.getSuccessMessage()))
                     .isDisplayed();
         } catch (Exception e) {
             return false;
