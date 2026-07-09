@@ -9,20 +9,17 @@ import utilities.ExcelUtility;
 
 public class CertificateAction extends BaseAction {
 
-    CertificatePage certificatePage;
-
-    String filePath =
+    private final String filePath =
             System.getProperty("user.dir")
-            + "/src/test/resources/testdata/CertificateData.xlsx";
+                    + "/src/test/resources/testdata/CertificateData.xlsx";
 
     public CertificateAction(WebDriver driver) {
         super(driver);
-        this.certificatePage = new CertificatePage(); 
     }
 
     public void clickCertificateMenu() {
         try {
-            click(certificatePage.certificateMenu);
+            click(CertificatePage.getCertificateMenu());
         } catch (Exception e) {
             System.out.println("Unable to click Certificate menu");
             e.printStackTrace();
@@ -31,7 +28,7 @@ public class CertificateAction extends BaseAction {
 
     public void clickCertificateSubMenu() {
         try {
-            click(certificatePage.certificateSubMenu);
+            click(CertificatePage.getCertificateSubMenu());
         } catch (Exception e) {
             System.out.println("Unable to click Certificate submenu");
             e.printStackTrace();
@@ -40,17 +37,17 @@ public class CertificateAction extends BaseAction {
 
     public void selectValidCertificateDetails() {
         try {
-            String module   = ExcelUtility.getCellData(filePath, "Sheet1", 1, 0);
-            String status   = ExcelUtility.getCellData(filePath, "Sheet1", 1, 1);
+            String module = ExcelUtility.getCellData(filePath, "Sheet1", 1, 0);
+            String status = ExcelUtility.getCellData(filePath, "Sheet1", 1, 1);
             String template = ExcelUtility.getCellData(filePath, "Sheet1", 1, 2);
 
-            Select moduleDD = new Select(waitForVisibility(certificatePage.moduleDropdown));
+            Select moduleDD = new Select(waitForVisibility(CertificatePage.getModuleDropdown()));
             moduleDD.selectByVisibleText(module);
 
-            Select statusDD = new Select(waitForVisibility(certificatePage.patientStatusDropdown));
+            Select statusDD = new Select(waitForVisibility(CertificatePage.getPatientStatusDropdown()));
             statusDD.selectByVisibleText(status);
 
-            Select templateDD = new Select(waitForVisibility(certificatePage.certificateTemplateDropdown));
+            Select templateDD = new Select(waitForVisibility(CertificatePage.getCertificateTemplateDropdown()));
             templateDD.selectByVisibleText(template);
 
         } catch (Exception e) {
@@ -61,17 +58,17 @@ public class CertificateAction extends BaseAction {
 
     public void selectInvalidCertificateDetails() {
         try {
-            String module   = ExcelUtility.getCellData(filePath, "Sheet1", 2, 0);
-            String status   = ExcelUtility.getCellData(filePath, "Sheet1", 2, 1);
+            String module = ExcelUtility.getCellData(filePath, "Sheet1", 2, 0);
+            String status = ExcelUtility.getCellData(filePath, "Sheet1", 2, 1);
             String template = ExcelUtility.getCellData(filePath, "Sheet1", 2, 2);
 
-            Select moduleDD = new Select(waitForVisibility(certificatePage.moduleDropdown));
+            Select moduleDD = new Select(waitForVisibility(CertificatePage.getModuleDropdown()));
             moduleDD.selectByVisibleText(module);
 
-            Select statusDD = new Select(waitForVisibility(certificatePage.patientStatusDropdown));
+            Select statusDD = new Select(waitForVisibility(CertificatePage.getPatientStatusDropdown()));
             statusDD.selectByVisibleText(status);
 
-            Select templateDD = new Select(waitForVisibility(certificatePage.certificateTemplateDropdown));
+            Select templateDD = new Select(waitForVisibility(CertificatePage.getCertificateTemplateDropdown()));
             templateDD.selectByVisibleText(template);
 
         } catch (Exception e) {
@@ -82,7 +79,7 @@ public class CertificateAction extends BaseAction {
 
     public void clickSearchButton() {
         try {
-            click(certificatePage.searchButton);
+            click(CertificatePage.getSearchButton());
         } catch (Exception e) {
             System.out.println("Unable to click Search button");
             e.printStackTrace();
@@ -94,8 +91,7 @@ public class CertificateAction extends BaseAction {
             String patientName = ExcelUtility.getCellData(filePath, "Sheet1", 1, 3);
 
             By patient = By.xpath(
-                "//tr[td[contains(normalize-space(),'" + patientName + "')]]//input[@type='checkbox']"
-            );
+                    "//tr[td[contains(normalize-space(),'" + patientName + "')]]//input[@type='checkbox']");
 
             click(patient);
 
@@ -107,7 +103,7 @@ public class CertificateAction extends BaseAction {
 
     public void clickGenerateButton() {
         try {
-            click(certificatePage.generateButton);
+            click(CertificatePage.getGenerateButton());
         } catch (Exception e) {
             System.out.println("Unable to click Generate button");
             e.printStackTrace();
@@ -117,10 +113,11 @@ public class CertificateAction extends BaseAction {
     public void closePatientDetailsPage() {
         try {
             By closeBtn = By.xpath(
-                "//button[contains(text(),'Cancel') or contains(text(),'Close')]"
-            );
-            click(closeBtn); 
+                    "//button[contains(text(),'Cancel') or contains(text(),'Close')]");
+
+            click(closeBtn);
             System.out.println("Popup closed successfully");
+
         } catch (Exception e) {
             System.out.println("Error while closing popup");
             e.printStackTrace();

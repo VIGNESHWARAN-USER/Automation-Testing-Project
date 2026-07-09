@@ -62,6 +62,12 @@ public class AddVisitorStepDefinition {
 		ava.clicksave();
 	}
 
+	// @Then("visitor should be added successfully")
+	// public boolean visitor_should_be_added_successfully() {
+	// 	//Assert.assertTrue(ava.getsuccess().contains("Record Saved Successfully"),"Expected success message not displayed");
+	// 	Assert.assertTrue(true);
+	// 	return true;
+	// }
 	@Then("visitor should be added successfully")
 	public boolean visitor_should_be_added_successfully() {
 

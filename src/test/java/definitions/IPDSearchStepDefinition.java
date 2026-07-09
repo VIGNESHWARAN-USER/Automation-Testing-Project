@@ -1,5 +1,6 @@
 package definitions;
 
+import actions.IPDSearchAction;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -8,19 +9,19 @@ import utilities.DriverFactory;
 
 public class IPDSearchStepDefinition extends DriverFactory {
 
-    IPDSearchPage searchPage;
+    IPDSearchAction searchAction;
 
     public IPDSearchStepDefinition() {
 
-        searchPage = new IPDSearchPage(DriverFactory.getDriver());
+    	searchAction = new IPDSearchAction(DriverFactory.getDriver());
     }
 
     @When("the user enters {string} in the search box")
     public void the_user_enters_in_the_search_box(String patientName) {
 
-        searchPage.clickIPDModule();
+    	searchAction.clickIPDModule();
 
-        searchPage.enterPatientName(patientName);
+    	searchAction.enterPatientName(patientName);
     }
 
     @Then("matching patient records should be displayed")

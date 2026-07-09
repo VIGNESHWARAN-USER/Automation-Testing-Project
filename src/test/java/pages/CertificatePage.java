@@ -4,24 +4,52 @@ import org.openqa.selenium.By;
 
 public class CertificatePage {
 
-    public By certificateMenu =
+    private static final By certificateMenu =
             By.xpath("//span[normalize-space()='Certificate']");
 
-    public By certificateSubMenu =
+    private static final By certificateSubMenu =
             By.xpath("//a[contains(@href,'generatecertificate')]");
 
-    public By moduleDropdown =
+    private static final By moduleDropdown =
             By.id("module");
 
-    public By patientStatusDropdown =
+    private static final By patientStatusDropdown =
             By.id("patient_status");
 
-    public By certificateTemplateDropdown =
+    private static final By certificateTemplateDropdown =
             By.name("certificate_id");
 
-    public By searchButton =
+    private static final By searchButton =
             By.xpath("//button[contains(.,'Search')]");
 
-    public By generateButton =
+    private static final By generateButton =
             By.xpath("//button[contains(@title,'generate')]");
+
+    public static By getCertificateMenu() {
+        return certificateMenu;
+    }
+
+    public static By getCertificateSubMenu() {
+        return certificateSubMenu;
+    }
+
+    public static By getModuleDropdown() {
+        return moduleDropdown;
+    }
+
+    public static By getPatientStatusDropdown() {
+        return patientStatusDropdown;
+    }
+
+    public static By getCertificateTemplateDropdown() {
+        return certificateTemplateDropdown;
+    }
+
+    public static By getSearchButton() {
+        return searchButton;
+    }
+
+    public static By getGenerateButton() {
+        return generateButton;
+    }
 }

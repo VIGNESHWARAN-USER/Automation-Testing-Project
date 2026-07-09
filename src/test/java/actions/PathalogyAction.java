@@ -14,11 +14,9 @@ import utilities.HelperClass;
 
 public class PathalogyAction extends BaseAction {
 
-    PathalogyPage pathoPage;
 
     public PathalogyAction(WebDriver driver) {
         super(driver);
-        this.pathoPage = new PathalogyPage(driver);
     }
     
    //for search
@@ -30,32 +28,32 @@ public class PathalogyAction extends BaseAction {
     }
     
     public void clickLogin() {
-    	click(pathoPage.login);
+    	click(PathalogyPage.getLogin());
     }
 
     public void clickUserlog() {
-        click(pathoPage.userlog);
-        waitForVisibility(pathoPage.signup);
+        click(PathalogyPage.getUserLogin());
+        waitForVisibility(PathalogyPage.getSignup());
     }
 
     public void clickSignup() {
     	
-        waitForVisibility(pathoPage.signup);
-        click(pathoPage.signup);
+        waitForVisibility(PathalogyPage.getSignup());
+        click(PathalogyPage.getSignup());
     }
 
     public void clickPathology() {
-        click(pathoPage.pathlogyMenu);
+        click(PathalogyPage.getPathologyMenu());
     }
 
     public void searchreport(String billNo) {
-        sendKeys(pathoPage.search, billNo);
+        sendKeys(PathalogyPage.getSearch(), billNo);
     }
 
     public void isRecDisplayed(String billNo) {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(pathoPage.table));
-        List<WebElement> rows = driver.findElements(pathoPage.table);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PathalogyPage.getTable()));
+        List<WebElement> rows = driver.findElements(PathalogyPage.getTable());
         int actualRows = rows.size();
 
         if (actualRows <= 1) {
@@ -64,43 +62,43 @@ public class PathalogyAction extends BaseAction {
             System.out.println("Records found: " + (actualRows - 1));
         }
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(pathoPage.billNumber(billNo)));
+        wait.until(ExpectedConditions.presenceOfElementLocated(PathalogyPage.getBillNumber(billNo)));
         boolean isPresent = driver.getPageSource().contains(billNo);
         Assert.assertTrue(isPresent, "Bill number not displayed in results");
     }
     
     public void invalidSearch(String BillNo) {
-    	sendKeys(pathoPage.search,BillNo);
+    	sendKeys(PathalogyPage.getSearch(),BillNo);
     }
     
     public String getErrorTxt() {
-    	return getText(pathoPage.notFound);
+    	return getText(PathalogyPage.getNotFound());
     }
     
     //for payment
     
     public void clickpay() {
-    	waitForVisibility(pathoPage.paybtn);
-        click(pathoPage.paybtn);
+    	waitForVisibility(PathalogyPage.getPayButton());
+        click(PathalogyPage.getPayButton());
     }
     
     public void enterAmt(String amt) {
-    	sendKeys(pathoPage.payAmt, amt);
+    	sendKeys(PathalogyPage.getPayAmount(), amt);
     }
     
     public void clickadd() {
-    	click(pathoPage.add);
+    	click(PathalogyPage.getAdd());
     }
     
     public void ensure_makepay() {
-        click(pathoPage.makepay);
-        switchToFrame(pathoPage.frame);
+        click(PathalogyPage.getMakePayment());
+        switchToFrame(PathalogyPage.getFrame());
     }
       
     public void enterMob(String mobile) {
     
         try {
-            sendKeys(pathoPage.mobile,mobile);
+            sendKeys(PathalogyPage.getMobile(),mobile);
         } catch (org.openqa.selenium.TimeoutException e) {
         	System.out.println("Mobile field not displayed");
         }
@@ -109,22 +107,22 @@ public class PathalogyAction extends BaseAction {
     public void clickContinue() {
 
         try {
-            click(pathoPage.cont);
+            click(PathalogyPage.getContinueButton());
         } catch (org.openqa.selenium.TimeoutException e) {
         	 System.out.println("Continue button not clickable");
         }
     }
     
     public void chooseUpi() {
-    	click(pathoPage.upi);
+    	click(PathalogyPage.getUpi());
     }
     
     public void sendUpiId(String upiId) {
-    	sendKeys(pathoPage.email,upiId);
+    	sendKeys(PathalogyPage.getEmail(),upiId);
     }
     
     public void clickVerify() {
-    	click(pathoPage.verify);
+    	click(PathalogyPage.getVerify());
     }
     
     public String getSuccessTxt() {
@@ -134,7 +132,7 @@ public class PathalogyAction extends BaseAction {
             System.out.println("Already on main page");
         }
         try {
-            return getText(pathoPage.succ);
+            return getText(PathalogyPage.getSuccess());
         } catch (org.openqa.selenium.TimeoutException e) {
             if (driver.getPageSource().contains("Thank you for your payment")) {
                 return "Thank you for your payment";
@@ -147,7 +145,7 @@ public class PathalogyAction extends BaseAction {
     public String getPayErrorTxt() {
         try {
 
-            return getText(pathoPage.payError).trim();
+            return getText(PathalogyPage.getPayError()).trim();
         } catch (org.openqa.selenium.TimeoutException e) {
             String pageSource = driver.getPageSource();
             boolean hasExceed = pageSource.contains("Amount Should Not Be Greater Than Balance");

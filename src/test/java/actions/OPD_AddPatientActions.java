@@ -16,7 +16,6 @@ import utilities.HelperClass;
 
 public class OPD_AddPatientActions extends BaseAction {
 
-    OPDPage opdPage;
     WebDriverWait wait;
 
     private static final String FILE_PATH  = "src/test/resources/testdata/OPDTestData.xlsx";
@@ -24,19 +23,18 @@ public class OPD_AddPatientActions extends BaseAction {
 
     public OPD_AddPatientActions(WebDriver driver) {
         super(driver);
-        opdPage = new OPDPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     public void clickAddPatientButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.addPatientButton));
-        click(opdPage.addPatientButton);
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getAddPatientButton()));
+        click(OPDPage.getAddPatientButton());
         HelperClass.logger.info("Clicked on Add Patient button");
     }
 
     public void clickAddIcon() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.addIcon));
-        click(opdPage.addIcon);
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getAddIcon()));
+        click(OPDPage.getAddIcon());
          HelperClass.logger.info("Clicked on Add Icon");
     }
 
@@ -47,18 +45,18 @@ public class OPD_AddPatientActions extends BaseAction {
         String month  = data.get("Month");
         String day    = data.get("Day");
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(opdPage.nameField));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(OPDPage.getNameField()));
 
         if (name != null && !name.isBlank()) {
-            sendKeys(opdPage.nameField, name);
+            sendKeys(OPDPage.getNameField(), name);
         }
         if (gender != null && !gender.isBlank()) {
-            WebElement genderEl = driver.findElement(opdPage.genderDropdown);
+            WebElement genderEl = driver.findElement(OPDPage.getGenderDropdown());
             new Select(genderEl).selectByVisibleText(gender);
         }
-        if (year  != null && !year.isBlank())  sendKeys(opdPage.yearField,  year);
-        if (month != null && !month.isBlank()) sendKeys(opdPage.monthField, month);
-        if (day   != null && !day.isBlank())   sendKeys(opdPage.dayField,   day);
+        if (year  != null && !year.isBlank())  sendKeys(OPDPage.getYearField(),  year);
+        if (month != null && !month.isBlank()) sendKeys(OPDPage.getMonthField(), month);
+        if (day   != null && !day.isBlank())   sendKeys(OPDPage.getDayField(),   day);
     }
 
     public void fillPatientFormFromExcel() throws Exception {
@@ -76,13 +74,13 @@ public class OPD_AddPatientActions extends BaseAction {
     }
 
     public void clickSave() {
-        click(opdPage.saveButton);
+        click(OPDPage.getSaveButton());
          HelperClass.logger.info("Clicked on Save button");
     }
 
     public boolean isSuccessMessageDisplayed() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(opdPage.successMessage));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(OPDPage.getSuccessMessage()));
             HelperClass.logger.info("Success message is displayed");
             return true;
         } catch (Exception e) {
@@ -93,7 +91,7 @@ public class OPD_AddPatientActions extends BaseAction {
 
     public boolean isNameErrorDisplayed() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(opdPage.nameErrorMessage));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(OPDPage.getNameErrorMessage()));
             HelperClass.logger.info("error message is displayed");
             return true;
         } catch (Exception e) {

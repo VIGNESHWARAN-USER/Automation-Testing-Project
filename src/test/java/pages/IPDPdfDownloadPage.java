@@ -1,31 +1,21 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-import utilities.DriverFactory;
+import org.openqa.selenium.By;
 
 public class IPDPdfDownloadPage {
 
-    public IPDPdfDownloadPage() {
+    private static final By ipdMenu =
+            By.xpath("//span[normalize-space()='IPD - In Patient']");
 
-        PageFactory.initElements(DriverFactory.getDriver(), this);
-    }
+    private static final By pdfButton =
+            By.xpath("//i[@class='fa fa-file-pdf-o']");
 
-    @FindBy(xpath = "//span[normalize-space()='IPD - In Patient']")
-    private WebElement ipdMenu;
 
-    @FindBy(xpath = "//i[@class='fa fa-file-pdf-o']")
-    private WebElement pdfButton;
-
-    public WebElement getIpdMenu() {
-
+    public static By getIpdMenu() {
         return ipdMenu;
     }
 
-    public WebElement getPdfButton() {
-
+    public static By getPdfButton() {
         return pdfButton;
     }
 }

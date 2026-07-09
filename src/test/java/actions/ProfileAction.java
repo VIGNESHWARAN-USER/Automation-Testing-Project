@@ -1,48 +1,71 @@
 package actions;
 
-
 import org.openqa.selenium.WebDriver;
+
 import pages.DashboardPage;
 import pages.ProfilePage;
 import utilities.HelperClass;
 
-public class ProfileAction extends BaseAction{
-	
-	public ProfileAction(WebDriver driver) {
-		super(driver);
-		dp= new DashboardPage();
-		pp= new ProfilePage();
-		// TODO Auto-generated constructor stub
-	}
-	DashboardPage dp;
-	ProfilePage pp;
-	public void clickProfileIcon() {
-		HelperClass.logger.info("Clicking profile icon");
-		click(dp.profileIcon);
-	}
-	
-	public String getRole() {
-		HelperClass.logger.info("Getting role");
-		return getText(pp.role);
-	}
-	
-	
-	
-	public void clickProfileButton() {
-		HelperClass.logger.info("Clicking profile button");
-		click(pp.profileButton);
-		
-	}
-	
-	public void clickLeaveButton() {
-		HelperClass.logger.info("clicking leave button");
-		click(pp.leaveButton);
-	}
-	
-	public boolean isLeaveTable() {
-		HelperClass.logger.info("checking table is empty ");
-	    return !driver.findElements(pp.leaveTable).isEmpty();
-	}
-	
-	
+
+public class ProfileAction extends BaseAction {
+
+
+    DashboardPage dp;
+    ProfilePage pp;
+
+
+    public ProfileAction(WebDriver driver) {
+
+        super(driver);
+
+        dp = new DashboardPage();
+
+        pp = new ProfilePage();
+    }
+
+
+    public void clickProfileIcon() {
+
+        HelperClass.logger.info(
+                "Clicking profile icon");
+
+        click(dp.getProfileIcon());
+    }
+
+
+    public String getRole() {
+
+        HelperClass.logger.info(
+                "Getting role");
+
+        return getText(pp.getRole());
+    }
+
+
+    public void clickProfileButton() {
+
+        HelperClass.logger.info(
+                "Clicking profile button");
+
+        click(pp.getProfileButton());
+    }
+
+
+    public void clickLeaveButton() {
+
+        HelperClass.logger.info(
+                "Clicking leave button");
+
+        click(pp.getLeaveButton());
+    }
+
+
+    public boolean isLeaveTable() {
+
+        HelperClass.logger.info(
+                "Checking leave table");
+
+        return !driver.findElements(
+                pp.getLeaveTable()).isEmpty();
+    }
 }

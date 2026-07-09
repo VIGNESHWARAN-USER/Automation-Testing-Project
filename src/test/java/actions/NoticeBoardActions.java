@@ -8,15 +8,12 @@ import utilities.HelperClass;
 public class NoticeBoardActions extends BaseAction {
 
 	WebDriver driver;
-	NoticeBoardPages nbp;
 
 	public NoticeBoardActions(WebDriver driver) {
 
 		super(driver);
 
 		this.driver = driver;
-
-		nbp = new NoticeBoardPages();
 	}
 
 	public void clknotice() {
@@ -24,7 +21,7 @@ public class NoticeBoardActions extends BaseAction {
 		HelperClass.logger.info(
 				"Clicking notice");
 
-		jsClick(nbp.notice);
+		jsClick(NoticeBoardPages.getNotice());
 	}
 
 	public boolean noticedisplayed() {
@@ -32,6 +29,6 @@ public class NoticeBoardActions extends BaseAction {
 		HelperClass.logger.info(
 				"Checking Notice Board page visibility");
 
-		return isDisplayed(nbp.noticedispl);
+		return isDisplayed(NoticeBoardPages.getNoticeDisplay());
 	}
 }

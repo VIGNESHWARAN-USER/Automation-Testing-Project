@@ -3,198 +3,183 @@ package actions;
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
-
 import org.testng.Assert;
 
 import pages.ReportDownloadFrontOfficePages;
-
 import utilities.HelperClass;
 
 public class ReportFrontOfcAction extends BaseAction {
 
-	ReportDownloadFrontOfficePages rd;
+    ReportDownloadFrontOfficePages rd;
 
-	WebDriver driver;
+    WebDriver driver;
 
-	public ReportFrontOfcAction(
-			WebDriver driver) {
 
-		super(driver);
+    public ReportFrontOfcAction(WebDriver driver) {
 
-		this.driver = driver;
+        super(driver);
 
-		rd = new ReportDownloadFrontOfficePages();
-	}
+        this.driver = driver;
 
-	public void clickrecp() {
+        rd = new ReportDownloadFrontOfficePages();
+    }
 
-		try {
 
-			HelperClass.logger.info(
-					"clicking reception button");
+    public void clickrecp() {
 
-			clickfb(rd.recpbtn);
-		}
+        try {
 
-		catch (Exception e) {
+            HelperClass.logger.info("clicking reception button");
 
-			e.printStackTrace();
+            clickfb(getElement(rd.getRecpbtn()));
 
-			Assert.fail(
-					"Unable to click receptionist button");
-		}
-	}
+        } catch (Exception e) {
 
-	public void clksign() {
+            e.printStackTrace();
 
-		try {
+            Assert.fail("Unable to click receptionist button");
+        }
+    }
 
-			HelperClass.logger.info(
-					"clicking sign in button");
 
-			clickfb(rd.subbtn);
-		}
+    public void clksign() {
 
-		catch (Exception e) {
+        try {
 
-			e.printStackTrace();
+            HelperClass.logger.info("clicking sign in button");
 
-			Assert.fail(
-					"Unable to click sign in button");
-		}
-	}
+            clickfb(getElement(rd.getSubbtn()));
 
-	public void frontofc() {
+        } catch (Exception e) {
 
-		try {
+            e.printStackTrace();
 
-			HelperClass.logger.info(
-					"waiting for dashboard to load");
+            Assert.fail("Unable to click sign in button");
+        }
+    }
 
-			Thread.sleep(5000);
 
-			HelperClass.logger.info(
-					"clicking front office");
+    public void frontofc() {
 
-			clickfb(rd.frontof);
-		}
+        try {
 
-		catch (Exception e) {
+            HelperClass.logger.info("waiting for dashboard to load");
 
-			e.printStackTrace();
+            Thread.sleep(5000);
 
-			Assert.fail(
-					"Unable to click front office");
-		}
-	}
+            HelperClass.logger.info("clicking front office");
 
-	public void exceldown() {
+            clickfb(getElement(rd.getFrontof()));
 
-		try {
+        } catch (Exception e) {
 
-			HelperClass.logger.info(
-					"clicking excel download");
+            e.printStackTrace();
 
-			clickfb(rd.excel);
-		}
+            Assert.fail("Unable to click front office");
+        }
+    }
 
-		catch (Exception e) {
 
-			e.printStackTrace();
+    public void exceldown() {
 
-			Assert.fail(
-					"Unable to download excel");
-		}
-	}
+        try {
 
-	public void pdfdown() {
+            HelperClass.logger.info("clicking excel download");
 
-		try {
+            clickfb(getElement(rd.getExcel()));
 
-			HelperClass.logger.info(
-					"clicking pdf download");
+        } catch (Exception e) {
 
-			clickfb(rd.pdf);
-		}
+            e.printStackTrace();
 
-		catch (Exception e) {
+            Assert.fail("Unable to download excel");
+        }
+    }
 
-			e.printStackTrace();
 
-			Assert.fail(
-					"Unable to download pdf");
-		}
-	}
+    public void pdfdown() {
 
-	public void csvdown() {
+        try {
 
-		try {
+            HelperClass.logger.info("clicking pdf download");
 
-			HelperClass.logger.info(
-					"clicking csv download");
+            clickfb(getElement(rd.getPdf()));
 
-			clickfb(rd.csv);
-		}
+        } catch (Exception e) {
 
-		catch (Exception e) {
+            e.printStackTrace();
 
-			e.printStackTrace();
+            Assert.fail("Unable to download pdf");
+        }
+    }
 
-			Assert.fail(
-					"Unable to download csv");
-		}
-	}
 
-	public boolean verifydown() {
+    public void csvdown() {
 
-		try {
+        try {
 
-			File folder = new File(
+            HelperClass.logger.info("clicking csv download");
 
-					System.getProperty("user.dir")
+            clickfb(getElement(rd.getCsv()));
 
-					+ File.separator
+        } catch (Exception e) {
 
-					+ "downloads");
+            e.printStackTrace();
 
-			File[] files = folder.listFiles();
+            Assert.fail("Unable to download csv");
+        }
+    }
 
-			if (files != null) {
 
-				for (File file : files) {
+    public boolean verifydown() {
 
-					String filename =
-							file.getName()
-							.toLowerCase();
+        try {
 
-					if (filename.endsWith(".pdf")
+            File folder = new File(
+                    System.getProperty("user.dir")
+                    + File.separator
+                    + "downloads");
 
-							|| filename.endsWith(".csv")
 
-							|| filename.endsWith(".xlsx")) {
+            File[] files = folder.listFiles();
 
-						HelperClass.logger.info(
-								"file downloaded successfully");
 
-						return true;
-					}
-				}
-			}
+            if (files != null) {
 
-			HelperClass.logger.info(
-					"file not downloaded");
+                for (File file : files) {
 
-			return false;
-		}
+                    String filename =
+                            file.getName().toLowerCase();
 
-		catch (Exception e) {
 
-			e.printStackTrace();
+                    if (filename.endsWith(".pdf")
+                            || filename.endsWith(".csv")
+                            || filename.endsWith(".xlsx")) {
 
-			Assert.fail(
-					"Error while verifying downloaded file");
 
-			return false;
-		}
-	}
+                        HelperClass.logger.info(
+                                "file downloaded successfully");
+
+                        return true;
+                    }
+                }
+            }
+
+
+            HelperClass.logger.info(
+                    "file not downloaded");
+
+            return false;
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+            Assert.fail(
+                    "Error while verifying downloaded file");
+
+            return false;
+        }
+    }
 }
