@@ -1,6 +1,5 @@
 package actions;
 
-import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.Keys;
@@ -16,17 +15,14 @@ import utilities.HelperClass;
 
 public class JoinConsultationAction extends BaseAction {
 
-	JoinConsultationPage jp;
-
 	public JoinConsultationAction(WebDriver driver) {
 		super(driver);
-		jp = new JoinConsultationPage();
 	}
 
 	public void clickLiveConsultationDropDown() {
 		try {
 			HelperClass.logger.info("Clicking live consultation dropdown");
-			jsClick(jp.liveConsultation);
+			jsClick(JoinConsultationPage.getLiveConsultation());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click live consultation dropdown: " + e.getMessage());
 			throw e;
@@ -36,7 +32,7 @@ public class JoinConsultationAction extends BaseAction {
 	public void clickLiveConsultationOption() {
 		try {
 			HelperClass.logger.info("Clicking live consultation option");
-			jsClick(jp.liveConsultationOption);
+			jsClick(JoinConsultationPage.getLiveConsultationOption());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click live consultation option: " + e.getMessage());
 			throw e;
@@ -45,11 +41,11 @@ public class JoinConsultationAction extends BaseAction {
 
 	public int findRecordWithStatus(String string) {
 		try {
-			int statusCount = getElements(jp.tableBody).size();
+			int statusCount = getElements(JoinConsultationPage.getTableBody()).size();
 
 			for (int i = 1; i <= statusCount; i++) {
 
-				Select select = new Select(getElement(jp.getStatusDropdown(i)));
+				Select select = new Select(getElement(JoinConsultationPage.getStatusDropdown(i)));
 
 				String status = select.getFirstSelectedOption().getText();
 
@@ -69,7 +65,7 @@ public class JoinConsultationAction extends BaseAction {
 	public boolean isActionPresent(int index) {
 		try {
 			if (index != -1)
-				return getElements(jp.getActionButtons(index)).size() == 2;
+				return getElements(JoinConsultationPage.getActionButtons(index)).size() == 2;
 			else
 				return true;
 
@@ -83,7 +79,7 @@ public class JoinConsultationAction extends BaseAction {
 		try {
 			return wait.until(
 					ExpectedConditions.elementToBeClickable(
-							getElements(jp.getActionButtons(index)).get(0))) != null;
+							getElements(JoinConsultationPage.getActionButtons(index)).get(0))) != null;
 
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to verify action clickable: " + e.getMessage());
@@ -93,11 +89,11 @@ public class JoinConsultationAction extends BaseAction {
 
 	public int findRecordNotWithStatus(String string) {
 		try {
-			int statusCount = getElements(jp.tableBody).size();
+			int statusCount = getElements(JoinConsultationPage.getTableBody()).size();
 
 			for (int i = 1; i <= statusCount; i++) {
 
-				Select select = new Select(getElement(jp.getStatusDropdown(i)));
+				Select select = new Select(getElement(JoinConsultationPage.getStatusDropdown(i)));
 
 				String status = select.getFirstSelectedOption().getText();
 
@@ -117,7 +113,7 @@ public class JoinConsultationAction extends BaseAction {
 	public boolean isActionNotPresent(int index) {
 		try {
 			if (index != -1)
-				return getElements(jp.getActionButtons(index)).size() == 1;
+				return getElements(JoinConsultationPage.getActionButtons(index)).size() == 1;
 			else
 				return true;
 
@@ -130,7 +126,7 @@ public class JoinConsultationAction extends BaseAction {
 	public void clickJoinButton(int index) {
 		try {
 			HelperClass.logger.info("Clicking join button");
-			jsClickElement(getElements(jp.getActionButtons(index)).get(0));
+			jsClickElement(getElements(JoinConsultationPage.getActionButtons(index)).get(0));
 
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click join button: " + e.getMessage());
@@ -141,7 +137,7 @@ public class JoinConsultationAction extends BaseAction {
 	public boolean isPopUpDisplayed() {
 		try {
 			return wait.until(
-					ExpectedConditions.visibilityOfElementLocated(jp.popUp))
+					ExpectedConditions.visibilityOfElementLocated(JoinConsultationPage.getPopUp()))
 					.isDisplayed();
 
 		} catch (Exception e) {
@@ -153,7 +149,7 @@ public class JoinConsultationAction extends BaseAction {
 	public boolean isStartNowButtonDisplayed() {
 		try {
 			return wait.until(
-					ExpectedConditions.visibilityOfElementLocated(jp.startNow))
+					ExpectedConditions.visibilityOfElementLocated(JoinConsultationPage.getStartNow()))
 					.isDisplayed();
 
 		} catch (Exception e) {
@@ -165,7 +161,7 @@ public class JoinConsultationAction extends BaseAction {
 	public void clickStartNowButton() {
 		try {
 			HelperClass.logger.info("Clicking start now button");
-			click(jp.startNow);
+			click(JoinConsultationPage.getStartNow());
 
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click start now button: " + e.getMessage());
@@ -211,7 +207,7 @@ public class JoinConsultationAction extends BaseAction {
 	public void clickAddButton() {
 		try {
 			HelperClass.logger.info("Clicking add button");
-			click(jp.addButton);
+			click(JoinConsultationPage.getAddButton());
 
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click add button: " + e.getMessage());
@@ -228,10 +224,10 @@ public class JoinConsultationAction extends BaseAction {
 	        Actions actions = new Actions(DriverFactory.getDriver());
 
 	        
-	        WebElement dropdown = getElement(jp.patientName);
+	        WebElement dropdown = getElement(JoinConsultationPage.getPatientName());
 	        actions.moveToElement(dropdown).click().build().perform();
-	        sendKeysAndEnter(jp.patientNameInput, patient);
-	        WebElement option = getElement(jp.firstPatientoption);
+	        sendKeysAndEnter(JoinConsultationPage.getPatientNameInput(), patient);
+	        WebElement option = getElement(JoinConsultationPage.getFirstPatientOption());
 	        Thread.sleep(2000);
 	        actions.moveToElement(option).click().build().perform();
 	        
@@ -383,48 +379,48 @@ public class JoinConsultationAction extends BaseAction {
 	
 	public void clickAddCredentialButton() {
 
-	    click(jp.addCredentialButton);
+	    click(JoinConsultationPage.getAddCredentialButton());
 	}
 
 	public void enterZoomApiKey(String apiKey) {
 
-	    sendKeys(jp.zoomApiKeyField, apiKey);
+	    sendKeys(JoinConsultationPage.getZoomApiKeyField(), apiKey);
 	}
 
 	public void enterZoomApiSecret(String apiSecret) {
 
-	    sendKeys(jp.zoomApiSecretField, apiSecret);
+	    sendKeys(JoinConsultationPage.getZoomApiSecretField(), apiSecret);
 	}
 
 	public void clickSaveCredentialButton() {
 
-	    click(jp.saveCredentialButton);
+	    click(JoinConsultationPage.getSaveCredentialButton());
 	}
 
 	public String getToastMessage() {
 
-	    return getText(jp.successToastMessage);
+	    return getText(JoinConsultationPage.getSuccessToastMessage());
 	}
 	
 	public String getZoomApiKeyValue() {
 
-	    return getElement(jp.zoomApiKeyField)
+	    return getElement(JoinConsultationPage.getZoomApiKeyField())
 	            .getAttribute("value");
 	}
 
 	public String getZoomApiSecretValue() {
 
-	    return getElement(jp.zoomApiSecretField)
+	    return getElement(JoinConsultationPage.getZoomApiSecretField())
 	            .getAttribute("value");
 	}
 	
 	public void clearCredentialFields() {
 
 	    WebElement apiKey =
-	            getElement(jp.zoomApiKeyField);
+	            getElement(JoinConsultationPage.getZoomApiKeyField());
 
 	    WebElement apiSecret =
-	            getElement(jp.zoomApiSecretField);
+	            getElement(JoinConsultationPage.getZoomApiSecretField());
 
 	    apiKey.sendKeys(Keys.CONTROL + "a");
 	    apiKey.sendKeys(Keys.DELETE);
@@ -436,7 +432,7 @@ public class JoinConsultationAction extends BaseAction {
 	}
 
 	public void clickSaveButton() {
-		click(jp.saveConsultationButton);
+		click(JoinConsultationPage.getSaveConsultationButton());
 	}
 
 }

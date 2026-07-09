@@ -8,24 +8,21 @@ import utilities.DriverFactory;
 public class IPDPdfDownloadAction extends BaseAction {
 
     WebDriver driver;
-    IPDPdfDownloadPage ipdPage;
 
     public IPDPdfDownloadAction() {
 
         super(DriverFactory.getDriver());
 
         this.driver = DriverFactory.getDriver();
-
-        ipdPage = new IPDPdfDownloadPage();
     }
 
     public void clickIPDMenu() {
 
-        clickfb(ipdPage.getIpdMenu());
+        clickfb(getElement(IPDPdfDownloadPage.getIpdMenu()));
     }
 
     public void clickPdfButton() {
 
-        clickfb(ipdPage.getPdfButton());
+        clickfb(getElement(IPDPdfDownloadPage.getPdfButton()));
     }
 }

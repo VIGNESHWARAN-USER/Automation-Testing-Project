@@ -4,42 +4,94 @@ import org.openqa.selenium.By;
 
 public class AddPatientPage {
 
-    public static By inPatientMenu =
+    private static final By inPatientMenu =
             By.xpath("//span[normalize-space()='IPD - In Patient']");
 
-    public static By addPatientButton =
+    private static final By addPatientButton =
             By.xpath("//a[@id='addp']");
 
-    public static By newPatientButton =
+    private static final By newPatientButton =
             By.xpath("//span[normalize-space()='New Patient']");
 
-    public static By patientName =
+    private static final By patientName =
             By.xpath("//input[@id='name']");
 
-    public static By guardianName =
+    private static final By guardianName =
             By.xpath("//div[@class='col-lg-6 col-md-6 col-sm-6']//input[@name='guardian_name']");
 
-    public static By genderDropdown =
+    private static final By genderDropdown =
             By.xpath("//select[@id='addformgender']");
 
-    public static By dobField =
+    private static final By dobField =
             By.xpath("//input[@id='birth_date']");
 
-    public static By phoneField =
+    private static final By phoneField =
             By.xpath("//input[@id='number']");
 
-    public static By emailField =
+    private static final By emailField =
             By.xpath("//input[@id='addformemail']");
 
-    public static By addressField =
+    private static final By addressField =
             By.xpath("//input[@name='address']");
 
-    public static By saveButton =
+    private static final By saveButton =
             By.xpath("//button[@id='formaddpabtn']");
 
-    public static By successMessage =
+    private static final By successMessage =
             By.xpath("//div[@class='toast-message']");
-    public static By validationMessage =
+
+    private static final By validationMessage =
             By.xpath("//div[@class='toast toast-error']");
 
+    public static By getInPatientMenu() {
+        return inPatientMenu;
+    }
+
+    public static By getAddPatientButton() {
+        return addPatientButton;
+    }
+
+    public static By getNewPatientButton() {
+        return newPatientButton;
+    }
+
+    public static By getPatientName() {
+        return patientName;
+    }
+
+    public static By getGuardianName() {
+        return guardianName;
+    }
+
+    public static By getGenderDropdown() {
+        return genderDropdown;
+    }
+
+    public static By getDobField() {
+        return dobField;
+    }
+
+    public static By getPhoneField() {
+        return phoneField;
+    }
+
+    public static By getEmailField() {
+        return emailField;
+    }
+
+    public static By getAddressField() {
+        return addressField;
+    }
+
+    public static By getSaveButton() {
+        return saveButton;
+    }
+
+    public static By getSuccessMessage() {
+        return successMessage;
+    }
+
+    public static By getValidationMessage() {
+        return validationMessage;
+    }
 }
