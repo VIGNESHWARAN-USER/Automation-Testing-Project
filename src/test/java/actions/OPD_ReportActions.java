@@ -19,12 +19,12 @@ public class OPD_ReportActions extends BaseAction {
         super(driver);
         opdPage = new OPDPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        enableHeadlessDownloads(); // <-- unlock downloads in headless mode
+        enableHeadlessDownloads(); 
     }
 
     private void enableHeadlessDownloads() {
         String downloadPath = System.getProperty("user.dir") + File.separator + "downloads";
-        new File(downloadPath).mkdirs(); // create folder if it doesn't exist
+        new File(downloadPath).mkdirs(); 
         ((ChromeDriver) driver).executeCdpCommand(
             "Browser.setDownloadBehavior",
             Map.of(
