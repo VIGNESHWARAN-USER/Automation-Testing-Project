@@ -59,7 +59,7 @@ public class OPDPage {
             By.cssSelector("div.pull-right button#formaddpabtn");
 
     private static final By successMessage =
-            By.cssSelector("div#toast-container div.toast-success");
+    		By.xpath("//*[contains(text(),'Record Saved Successfully')]");
 
     private static final By nameErrorMessage =
             By.cssSelector("div#toast-container div.toast-error");
