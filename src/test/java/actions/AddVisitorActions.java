@@ -2,88 +2,94 @@ package actions;
 
 import java.time.Duration;
 import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import pages.AddVisitorPages;
 import utilities.HelperClass;
 
 public class AddVisitorActions extends BaseAction {
-	AddVisitorPages vp;
-	WebDriverWait wait;
 
-	public AddVisitorActions(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		vp = new AddVisitorPages();
-	}
+    WebDriverWait wait;
 
-	public void clkaddvistor() {
-	    try {
-	        HelperClass.logger.info("clicking front office");
-	        jsClick(vp.frontofc);
+    public AddVisitorActions(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-	        HelperClass.logger.info("clicking add visitor button");
-	        waitForVisibility(vp.addVisitorBtn);
-	        jsClick(vp.addVisitorBtn);
+    public void clkaddvistor() {
+        try {
+            HelperClass.logger.info("Clicking Front Office");
+            jsClick(AddVisitorPages.getFrontOffice());
 
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	}
+            HelperClass.logger.info("Clicking Add Visitor button");
+            waitForVisibility(AddVisitorPages.getAddVisitorBtn());
+            jsClick(AddVisitorPages.getAddVisitorBtn());
 
-	public void entervalddet(Map<String, String> data) {
-		try {
-			HelperClass.logger.info("entering valid visitor details");
-			sendKeys(vp.visitorName, data.get("visitorName"));
-			sendKeys(vp.phoneNumber, data.get("phoneNumber"));
-			selectByVisibleText(vp.purpose, data.get("purpose"));
-			jsSendKeys(vp.checkinDate, data.get("checkinDate"));
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public void enterinvaldet(Map<String, String> data) {
-		try {
-			HelperClass.logger.info("entering invalid visitor details");
-			sendKeys(vp.visitorName, data.get("visitorName"));
-			sendKeys(vp.phoneNumber, data.get("phoneNumber"));
-			selectByVisibleText(vp.purpose, data.get("purpose"));
-			jsSendKeys(vp.checkinDate, data.get("checkinDate"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public void entervalddet(Map<String, String> data) {
+        try {
+            HelperClass.logger.info("Entering valid visitor details");
 
-	public void clicksave() {
-		try {
-			HelperClass.logger.info("clicking save button");
-			jsClick(vp.saveBtn);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            sendKeys(AddVisitorPages.getVisitorName(), data.get("visitorName"));
+            sendKeys(AddVisitorPages.getPhoneNumber(), data.get("phoneNumber"));
+            selectByVisibleText(AddVisitorPages.getPurpose(), data.get("purpose"));
+            jsSendKeys(AddVisitorPages.getCheckinDate(), data.get("checkinDate"));
 
-	public String getsuccess() {
-		try {
-			HelperClass.logger.info("getting success message");
-			return getText(vp.successmsg);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public boolean validmessage() {
-		try {
-			HelperClass.logger.info("checking validation message");
-			return isDisplayed(vp.validationMessage);
+    public void enterinvaldet(Map<String, String> data) {
+        try {
+            HelperClass.logger.info("Entering invalid visitor details");
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+            sendKeys(AddVisitorPages.getVisitorName(), data.get("visitorName"));
+            sendKeys(AddVisitorPages.getPhoneNumber(), data.get("phoneNumber"));
+            selectByVisibleText(AddVisitorPages.getPurpose(), data.get("purpose"));
+            jsSendKeys(AddVisitorPages.getCheckinDate(), data.get("checkinDate"));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clicksave() {
+        try {
+            HelperClass.logger.info("Clicking Save button");
+            jsClick(AddVisitorPages.getSaveBtn());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getsuccess() {
+        try {
+            HelperClass.logger.info("Getting success message");
+            return getText(AddVisitorPages.getSuccessMsg());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    public boolean validmessage() {
+        try {
+            HelperClass.logger.info("Checking validation message");
+            return isDisplayed(AddVisitorPages.getValidationMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

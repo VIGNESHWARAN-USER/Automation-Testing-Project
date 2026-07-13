@@ -8,32 +8,29 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import pages.PrescriptionPage;
 
-import java.util.List;
 
 public class PrescriptionAction extends BaseAction {
 
     private final WebDriver driver;
-    private final PrescriptionPage page;
 
     public PrescriptionAction(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        this.page = new PrescriptionPage();
     }
 
     public void clickIPDMenu() {
-        jsClick(page.ipdMenu);
-        waitForVisibility(page.patientSearchBox);
+        jsClick(PrescriptionPage.getIpdMenu());
+        waitForVisibility(PrescriptionPage.getPatientSearchBox());
     }
 
     public void searchPatientByIPD(String ipdNumber) {
-        sendKeys(page.patientSearchBox, ipdNumber);
-        waitForVisibility(page.patientByIPD(ipdNumber));
+        sendKeys(PrescriptionPage.getPatientSearchBox(), ipdNumber);
+        waitForVisibility(PrescriptionPage.getPatientByIPD(ipdNumber));
     }
 
     public boolean isCorrectPatientDisplayed(String ipdNumber) {
         try {
-            return waitForVisibility(page.patientByIPD(ipdNumber))
+            return waitForVisibility(PrescriptionPage.getPatientByIPD(ipdNumber))
                     .getText().trim().contains(ipdNumber);
         } catch (Exception e) {
             return false;
@@ -42,23 +39,23 @@ public class PrescriptionAction extends BaseAction {
 
     public void clickIPDNumber(String ipdNumber) {
         try {
-            jsClick(page.click128Tab);
+            jsClick(PrescriptionPage.getClick128Tab());
         } catch (Exception e) {
-            jsClick(page.ipdNumber(ipdNumber));
+            jsClick(PrescriptionPage.getIpdNumber(ipdNumber));
         }
     }
 
     public void clickPrescriptionTab() {
-        jsClick(page.prescriptionTab);
-        waitForClickable(page.prescriptionButton);
-        jsClick(page.prescriptionButton);
-        waitForVisibility(page.addprescbtn);
+        jsClick(PrescriptionPage.getPrescriptionTab());
+        waitForClickable(PrescriptionPage.getPrescriptionButton());
+        jsClick(PrescriptionPage.getPrescriptionButton());
+        waitForVisibility(PrescriptionPage.getAddPrescriptionButton());
     }
 
     public void clickAddPrescription() {
-        waitForClickable(page.addprescbtn);
-        jsClick(page.addprescbtn);
-        wait.until(ExpectedConditions.presenceOfElementLocated(page.headerNote));
+        waitForClickable(PrescriptionPage.getAddPrescriptionButton());
+        jsClick(PrescriptionPage.getAddPrescriptionButton());
+        wait.until(ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getHeaderNote()));
     }
 
     private void typeInWysihtml5(By iframeLocator, String value) {
@@ -76,7 +73,7 @@ public class PrescriptionAction extends BaseAction {
             driver.switchTo().frame(iframe);
 
             WebElement body = wait.until(
-                ExpectedConditions.presenceOfElementLocated(page.frameBody));
+                ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getFrameBody()));
 
             js.executeScript("arguments[0].focus();", body);
             js.executeScript("arguments[0].click();", body);
@@ -95,7 +92,7 @@ public class PrescriptionAction extends BaseAction {
             driver.switchTo().frame(iframe);
 
             WebElement body = wait.until(
-                ExpectedConditions.presenceOfElementLocated(page.frameBody));
+                ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getFrameBody()));
 
             js.executeScript("arguments[0].focus();", body);
             js.executeScript("arguments[0].click();", body);
@@ -113,16 +110,16 @@ public class PrescriptionAction extends BaseAction {
 
         driver.switchTo().defaultContent();
         WebElement label = wait.until(
-            ExpectedConditions.presenceOfElementLocated(page.headerNoteLabel));
+            ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getHeaderNoteLabel()));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", label);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(page.headerNoteLabel));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getHeaderNoteLabel()));
         js.executeScript("arguments[0].click();", label);
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(page.headerNote));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(page.headerNote));
+        wait.until(ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getHeaderNote()));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getHeaderNote()));
 
-        typeInWysihtml5(page.headerNote, value);
+        typeInWysihtml5(PrescriptionPage.getHeaderNote(), value);
     }
 
     public void enterFooterNote(String value) {
@@ -130,14 +127,14 @@ public class PrescriptionAction extends BaseAction {
 
         driver.switchTo().defaultContent();
         WebElement label = wait.until(
-            ExpectedConditions.presenceOfElementLocated(page.footerNoteLabel));
+            ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getFooterNoteLabel()));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", label);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(page.footerNoteLabel));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getFooterNoteLabel()));
         js.executeScript("arguments[0].click();", label);
-        wait.until(ExpectedConditions.presenceOfElementLocated(page.footerNote));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(page.footerNote));
+        wait.until(ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getFooterNote()));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getFooterNote()));
 
-        typeInWysihtml5(page.footerNote, value);
+        typeInWysihtml5(PrescriptionPage.getFooterNote(), value);
     }
 
     private void selectSelect2ByJS(By locator, String visibleText) {
@@ -164,31 +161,31 @@ public class PrescriptionAction extends BaseAction {
     }
 
     public void selectPrescribeBy(String value) {
-        selectSelect2ByJS(page.prescribeByDropdown, value);
+        selectSelect2ByJS(PrescriptionPage.getPrescribeByDropdown(), value);
     }
 
     public void selectPathology(String value) {
-        selectSelect2ByJS(page.pathologyDropdown, value);
+        selectSelect2ByJS(PrescriptionPage.getPathologyDropdown(), value);
     }
 
     public void selectRadiology(String value) {
-        selectSelect2ByJS(page.radiologyDropdown, value);
+        selectSelect2ByJS(PrescriptionPage.getRadiologyDropdown(), value);
     }
 
     public void enterFindingCategory(String value) {
-        selectSelect2ByJS(page.findingCategory, value);
+        selectSelect2ByJS(PrescriptionPage.getFindingCategory(), value);
     }
 
     public void enterFindings(String value) {
         if (value == null || value.trim().isEmpty()) return;
 
         driver.switchTo().defaultContent();
-        WebElement input = waitForVisibility(page.findings);
+        WebElement input = waitForVisibility(PrescriptionPage.getFindings());
         input.click();
         input.sendKeys(value);
 
         try {
-            waitForClickable(page.findingOption(value)).click();
+            waitForClickable(PrescriptionPage.getFindingOption(value)).click();
         } catch (Exception e) {
             input.sendKeys(Keys.ENTER);
         }
@@ -196,24 +193,24 @@ public class PrescriptionAction extends BaseAction {
 
     public void enterFindingDescription(String value) {
         if (value == null || value.trim().isEmpty()) return;
-        sendKeys(page.findingDescription, value);
+        sendKeys(PrescriptionPage.getFindingDescription(), value);
     }
 
     public void selectMedicineCategory(String value) {
         if (value == null || value.trim().isEmpty()) return;
 
-        selectSelect2ByJS(page.medicineCategoryDropdown, value);
-        wait.until(d -> d.findElements(page.medicineOptions).size() > 1);
+        selectSelect2ByJS(PrescriptionPage.getMedicineCategoryDropdown(), value);
+        wait.until(d -> d.findElements(PrescriptionPage.getMedicineOptions()).size() > 1);
     }
 
     public void selectMedicine(String value) {
         if (value == null || value.trim().isEmpty()) return;
 
         WebElement sel = wait.until(
-            ExpectedConditions.presenceOfElementLocated(page.medicineDropdown));
+            ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getMedicineDropdown()));
 
         String matchedValue = null;
-        for (WebElement opt : sel.findElements(page.dropdownOptions)) {
+        for (WebElement opt : sel.findElements(PrescriptionPage.getDropdownOptions())) {
             String text = opt.getText().trim();
             if (text.equalsIgnoreCase(value.trim()) || text.contains(value.trim())) {
                 matchedValue = opt.getAttribute("value");
@@ -226,17 +223,17 @@ public class PrescriptionAction extends BaseAction {
         js.executeScript(
             "$(arguments[0]).val(arguments[1]).trigger('change');", sel, matchedValue);
 
-        wait.until(ExpectedConditions.attributeToBe(page.medicineDropdown, "value", matchedValue));
+        wait.until(ExpectedConditions.attributeToBe(PrescriptionPage.getMedicineDropdown(), "value", matchedValue));
     }
 
     public void selectDose(String value) {
         if (value == null || value.trim().isEmpty()) return;
 
         WebElement sel = wait.until(
-            ExpectedConditions.presenceOfElementLocated(page.doseDropdown));
+            ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getDoseDropdown()));
 
         String matchedValue = null;
-        for (WebElement opt : sel.findElements(page.dropdownOptions)) {
+        for (WebElement opt : sel.findElements(PrescriptionPage.getDropdownOptions())) {
             String text = opt.getText().trim();
             if (text.equalsIgnoreCase(value.trim()) || text.contains(value.trim())) {
                 matchedValue = opt.getAttribute("value");
@@ -249,20 +246,20 @@ public class PrescriptionAction extends BaseAction {
         js.executeScript(
             "$(arguments[0]).val(arguments[1]).trigger('change');", sel, matchedValue);
 
-        wait.until(ExpectedConditions.attributeToBe(page.doseDropdown, "value", matchedValue));
+        wait.until(ExpectedConditions.attributeToBe(PrescriptionPage.getDoseDropdown(), "value", matchedValue));
     }
 
     public void selectDoseInterval(String value) {
-        selectSelect2ByJS(page.doseIntervalDropdown, value);
+        selectSelect2ByJS(PrescriptionPage.getDoseIntervalDropdown(), value);
     }
 
     public void selectDoseDuration(String value) {
-        selectSelect2ByJS(page.doseDurationDropdown, value);
+        selectSelect2ByJS(PrescriptionPage.getDoseDurationDropdown(), value);
     }
 
     public void enterInstruction(String value) {
         if (value == null || value.trim().isEmpty()) return;
-        sendKeys(page.instruction, value);
+        sendKeys(PrescriptionPage.getInstruction(), value);
     }
 
     public void uploadAttachment(String filePath) {
@@ -276,7 +273,7 @@ public class PrescriptionAction extends BaseAction {
 
         WebElement input = wait.until(
             ExpectedConditions.refreshed(
-                ExpectedConditions.presenceOfElementLocated(page.attachmentInput)));
+                ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getAttachmentInput())));
 
         input.sendKeys(absolutePath);
     }
@@ -287,23 +284,23 @@ public class PrescriptionAction extends BaseAction {
         try {
             WebElement btn = wait.until(
                 ExpectedConditions.refreshed(
-                    ExpectedConditions.elementToBeClickable(page.saveButton)));
+                    ExpectedConditions.elementToBeClickable(PrescriptionPage.getSaveButton())));
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", btn);
             js.executeScript("arguments[0].click();", btn);
 
         } catch (org.openqa.selenium.StaleElementReferenceException e) {
-            WebElement btn = waitForClickable(page.saveButton);
+            WebElement btn = waitForClickable(PrescriptionPage.getSaveButton());
             js.executeScript("arguments[0].scrollIntoView({block:'center'});", btn);
             js.executeScript("arguments[0].click();", btn);
         }
 
         wait.until(ExpectedConditions.or(
-        	    ExpectedConditions.visibilityOfElementLocated(page.getPrescriptionTable),
-        	    ExpectedConditions.visibilityOfElementLocated(page.errormsg)
+        	    ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getPrescriptionTable()),
+        	    ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getErrorMessage())
         	));
         	wait.until(driver ->
-        	        !driver.findElements(page.prescriptionFirstRow).isEmpty()
-        	        || !driver.findElements(page.errormsg).isEmpty()
+        	        !driver.findElements(PrescriptionPage.getPrescriptionFirstRow()).isEmpty()
+        	        || !driver.findElements(PrescriptionPage.getErrorMessage()).isEmpty()
         	);
     }
 
@@ -312,7 +309,7 @@ public class PrescriptionAction extends BaseAction {
 
         WebElement btn = wait.until(
             ExpectedConditions.refreshed(
-                ExpectedConditions.elementToBeClickable(page.saveAndPrintButton)));
+                ExpectedConditions.elementToBeClickable(PrescriptionPage.getSaveAndPrintButton())));
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", btn);
         js.executeScript("arguments[0].click();", btn);
 
@@ -321,7 +318,7 @@ public class PrescriptionAction extends BaseAction {
 
     public boolean isPrescriptionSaved() {
         try {
-            waitForVisibility(page.getPrescriptionTable);
+            waitForVisibility(PrescriptionPage.getPrescriptionTable());
             return true;
         } catch (Exception e) {
             return false;
@@ -331,9 +328,9 @@ public class PrescriptionAction extends BaseAction {
     public boolean isPrescriptionInList() {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    page.getPrescriptionTable));
+                    PrescriptionPage.getPrescriptionTable()));
             boolean rowLoaded = wait.until(driver ->
-                    !driver.findElements(page.prescriptionFirstRow).isEmpty());
+                    !driver.findElements(PrescriptionPage.getPrescriptionFirstRow()).isEmpty());
 
             return rowLoaded;
 
@@ -344,7 +341,7 @@ public class PrescriptionAction extends BaseAction {
 
     public boolean isPrescriptionUpdated() {
         try {
-            waitForVisibility(page.getPrescriptionTable);
+            waitForVisibility(PrescriptionPage.getPrescriptionTable());
             return true;
         } catch (Exception e) {
             return false;
@@ -362,7 +359,7 @@ public class PrescriptionAction extends BaseAction {
 
     public boolean isPrescriptionDeletedSuccessfully() {
         try {
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(page.deleteBtn));
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(PrescriptionPage.getDeleteButton()));
             return true;
         } catch (Exception e) {
             return false;
@@ -397,42 +394,42 @@ public class PrescriptionAction extends BaseAction {
 
     public String getErrorMessage() {
         try {
-            return waitForVisibility(page.errormsg).getText().trim();
+            return waitForVisibility(PrescriptionPage.getErrorMessage()).getText().trim();
         } catch (Exception e) {
             return "";
         }
     }
 
     public void clickViewPrescription() {
-        waitForClickable(page.viewPrescription);
-        jsClick(page.viewPrescription);
+        waitForClickable(PrescriptionPage.getViewPrescription());
+        jsClick(PrescriptionPage.getViewPrescription());
     }
 
     public void clickEdit() {
-        waitForClickable(page.editBtn);
-        jsClick(page.editBtn);
+        waitForClickable(PrescriptionPage.getEditButton());
+        jsClick(PrescriptionPage.getEditButton());
     }
 
     public void clickDelete() {
-        waitForClickable(page.deleteBtn);
-        jsClick(page.deleteBtn);
+        waitForClickable(PrescriptionPage.getDeleteButton());
+        jsClick(PrescriptionPage.getDeleteButton());
     }
 
     public void confirmDelete() {
         wait.until(ExpectedConditions.alertIsPresent()).accept();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(page.deleteBtn));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(PrescriptionPage.getDeleteButton()));
     }
 
     public void updatePrescriptionDetails() {
         driver.switchTo().defaultContent();
 
         WebElement iframe = wait.until(
-            ExpectedConditions.visibilityOfElementLocated(page.headerNote));
+            ExpectedConditions.visibilityOfElementLocated(PrescriptionPage.getHeaderNote()));
         driver.switchTo().frame(iframe);
 
         try {
             WebElement body = wait.until(
-                ExpectedConditions.presenceOfElementLocated(page.frameBody));
+                ExpectedConditions.presenceOfElementLocated(PrescriptionPage.getFrameBody()));
             js.executeScript("arguments[0].innerHTML='';", body);
             body.sendKeys("Updated prescription details");
         } finally {

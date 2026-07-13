@@ -5,11 +5,8 @@ import pages.PathologistPage;
 
 public class PathologistAction extends BaseAction {
 
-    PathologistPage pathologyPage;
-
     public PathologistAction(WebDriver driver) {
         super(driver);
-        this.pathologyPage = new PathologistPage(driver);
     }
     
     public void navigateToAdminLogin() {
@@ -17,59 +14,59 @@ public class PathologistAction extends BaseAction {
     }
     
     public void clickPathologistBtn() {
-        waitForVisibility(pathologyPage.pathologistBtn);
-        click(pathologyPage.pathologistBtn);
+        waitForVisibility(PathologistPage.getPathologistBtn());
+        click(PathologistPage.getPathologistBtn());
     }
 
     public void clickSignIn() {
-        waitForVisibility(pathologyPage.signInBtn);
-        click(pathologyPage.signInBtn);
+        waitForVisibility(PathologistPage.getSignInBtn());
+        click(PathologistPage.getSignInBtn());
     }
 
     public void clickPathologist() {
-        click(pathologyPage.pathalogist);
+        click(PathologistPage.getPathologist());
     }
 
     public void clickmsg() {
-        waitForVisibility(pathologyPage.messaging);
-        click(pathologyPage.messaging);
+        waitForVisibility(PathologistPage.getMessaging());
+        click(PathologistPage.getMessaging());
     }
 
     public void clickSms() {
-        click(pathologyPage.sendSms);
+        click(PathologistPage.getSendSms());
     }
 
     public void enterTitle(String title) {
-        waitForVisibility(pathologyPage.title);
-        sendKeys(pathologyPage.title, title);
+        waitForVisibility(PathologistPage.getTitle());
+        sendKeys(PathologistPage.getTitle(), title);
     }
 
     public void enterTempId(String tempId) {
-        sendKeys(pathologyPage.tempId, tempId);
+        sendKeys(PathologistPage.getTempId(), tempId);
     }
 
     public void sendthrough() {
-        click(pathologyPage.sms);
-        click(pathologyPage.mobileApp);
+        click(PathologistPage.getSms());
+        click(PathologistPage.getMobileApp());
     }
 
     public void enterMessage(String message) {
-        waitForVisibility(pathologyPage.message);
-        sendKeys(pathologyPage.message, message);
+        waitForVisibility(PathologistPage.getMessage());
+        sendKeys(PathologistPage.getMessage(), message);
     }
 
     public void msgTo() {
-        click(pathologyPage.dtr);
-        click(pathologyPage.nurse);
+        click(PathologistPage.getDtr());
+        click(PathologistPage.getNurse());
     }
 
     public void clickSend() {
-        click(pathologyPage.send);
+        click(PathologistPage.getSend());
     }
 
     public String getSuccessMsg() {
         try {
-            return getText(pathologyPage.succMsg);
+            return getText(PathologistPage.getSuccessMessage());
         } catch (Exception e) {
             System.out.println("Success message not found: " + e.getMessage());
             return null;
@@ -78,8 +75,8 @@ public class PathologistAction extends BaseAction {
     
     public String getErrorMsg() {
         try {
-            waitForVisibility(pathologyPage.emptyError);
-            return getText(pathologyPage.emptyError);
+            waitForVisibility(PathologistPage.getEmptyError());
+            return getText(PathologistPage.getEmptyError());
         } catch (Exception e) {
             System.out.println("Error toast not found: " + e.getMessage());
             return null;
@@ -88,8 +85,8 @@ public class PathologistAction extends BaseAction {
 
     public String getMissingFieldMsg() {
         try {
-            waitForVisibility(pathologyPage.missingFieldError);
-            return getText(pathologyPage.missingFieldError);
+            waitForVisibility(PathologistPage.getMissingFieldError());
+            return getText(PathologistPage.getMissingFieldError());
         } catch (Exception e) {
             System.out.println("Missing field toast not found: " + e.getMessage());
             return null;

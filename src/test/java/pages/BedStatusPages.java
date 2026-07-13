@@ -4,10 +4,32 @@ import org.openqa.selenium.By;
 
 public class BedStatusPages {
 
-	public By recpbtn = By.xpath("//div[@class='btn-group btn-group-justified']//child::a[contains(text(),'Reception')]");
-	public By signin = By.xpath("//form//child::button[@type='submit']");
-	public By appbtn = By.xpath("//span[normalize-space()='Appointment']");
-	public By bedsts = By.xpath("//i[contains(@class,'fa-bed')]/parent::a");
-	public By room = By.xpath("(//div/child::i[contains(@class,'fa-bed')])[5]");
-	public By check = By.xpath("//td[contains(text(),'Gender')]/following-sibling::td");
+    private static final By receptionistButton =By.xpath("//div[@class='btn-group btn-group-justified']//child::a[contains(text(),'Reception')]");
+    private static final By signInButton =By.xpath("//form//child::button[@type='submit']");
+    private static final By appointmentButton =
+            By.xpath("//span[normalize-space()='Appointment']");
+    private static final By bedStatusButton =
+            By.xpath("//i[contains(@class,'fa-bed')]/parent::a");
+    private static final By room =
+            By.xpath("(//div/child::i[contains(@class,'fa-bed')])[5]");
+    private static final By gender =
+            By.xpath("//td[contains(text(),'Gender')]/following-sibling::td");
+    public static By getReceptionistButton() {
+        return receptionistButton;
+    }
+    public static By getSignInButton() {
+        return signInButton;
+    }
+    public static By getAppointmentButton() {
+        return appointmentButton;
+    }
+    public static By getBedStatusButton() {
+        return bedStatusButton;
+    }
+    public static By getRoom() {
+        return room;
+    }
+    public static By getGender() {
+        return gender;
+    }
 }

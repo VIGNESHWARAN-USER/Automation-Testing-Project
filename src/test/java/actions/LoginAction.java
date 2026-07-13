@@ -10,20 +10,15 @@ import utilities.HelperClass;
 
 public class LoginAction extends BaseAction {
 
-	LoginPage lp;
-	DashboardPage dp;
-
 	public LoginAction(WebDriver driver) {
 		super(driver);
-		lp = new LoginPage();
-		dp = new DashboardPage();
 		this.driver = driver;
 	}
 
 	public void setUsername(String username) {
 		try {
 			HelperClass.logger.info("entering username");
-			sendKeys(lp.emailInput, username);
+			sendKeys(LoginPage.getEmailInput(), username);
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to enter username: " + e.getMessage());
 			throw e;
@@ -33,7 +28,7 @@ public class LoginAction extends BaseAction {
 	public void setPassword(String password) {
 		try {
 			HelperClass.logger.info("entering password");
-			sendKeys(lp.passwordInput, password);
+			sendKeys(LoginPage.getPasswordInput(), password);
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to enter password: " + e.getMessage());
 			throw e;
@@ -43,7 +38,7 @@ public class LoginAction extends BaseAction {
 	public void clickLoginButton() {
 		try {
 			HelperClass.logger.info("clicking login button");
-			click(lp.signInButton);
+			click(LoginPage.getSignInButton());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to click login button: " + e.getMessage());
 			throw e;
@@ -53,7 +48,7 @@ public class LoginAction extends BaseAction {
 	public String getInvalidErrorMessage() {
 		try {
 			HelperClass.logger.info("getting invalid message");
-			return getText(lp.invalidErrorMessage);
+			return getText(LoginPage.getInvalidErrorMessage());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to get invalid error message: " + e.getMessage());
 			throw e;
@@ -63,7 +58,7 @@ public class LoginAction extends BaseAction {
 	public String getUsernameErrorMessage() {
 		try {
 			HelperClass.logger.info("username error message");
-			return getText(lp.usernameErrorMessage);
+			return getText(LoginPage.getUsernameErrorMessage());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to get username error message: " + e.getMessage());
 			throw e;
@@ -73,7 +68,7 @@ public class LoginAction extends BaseAction {
 	public String getPasswordErrorMessage() {
 		try {
 			HelperClass.logger.info("password error message");
-			return getText(lp.passwordErrorMessage);
+			return getText(LoginPage.getPasswordErrorMessage());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to get password error message: " + e.getMessage());
 			throw e;
@@ -85,47 +80,47 @@ public class LoginAction extends BaseAction {
 			switch (role) {
 				case "Super Admin":
 					HelperClass.logger.info("clicking super admin");
-					click(lp.superAdmin);
+					click(LoginPage.getSuperAdmin());
 					break;
 
 				case "Admin":
 					HelperClass.logger.info("clicking admin");
-					click(lp.admin);
+					click(LoginPage.getAdmin());
 					break;
 
 				case "Doctor":
 					HelperClass.logger.info("clicking doctor");
-					click(lp.doctor);
+					click(LoginPage.getDoctor());
 					break;
 
 				case "Nurse":
 					HelperClass.logger.info("clicking nurse");
-					click(lp.nurse);
+					click(LoginPage.getNurse());
 					break;
 
 				case "Pharmacist":
 					HelperClass.logger.info("clicking pharmacist");
-					click(lp.pharmacist);
+					click(LoginPage.getPharmacist());
 					break;
 
 				case "Pathologist":
 					HelperClass.logger.info("clicking pathologist");
-					click(lp.pathologist);
+					click(LoginPage.getPathologist());
 					break;
 
 				case "Radiologist":
 					HelperClass.logger.info("clicking radiologist");
-					click(lp.radiologist);
+					click(LoginPage.getRadiologist());
 					break;
 
 				case "Accountant":
 					HelperClass.logger.info("clicking accountant");
-					click(lp.accountant);
+					click(LoginPage.getAccountant());
 					break;
 
 				case "Receptionist":
 					HelperClass.logger.info("clicking receptionist");
-					click(lp.receptionist);
+					click(LoginPage.getReceptionist());
 					break;
 
 				default:
@@ -139,8 +134,8 @@ public class LoginAction extends BaseAction {
 
 	public String getUserRole() {
 		try {
-			click(dp.profileIcon);
-			return getText(dp.role);
+			click(DashboardPage.getProfileIcon());
+			return getText(DashboardPage.getRole());
 		} catch (Exception e) {
 			HelperClass.logger.error("Failed to get user role: " + e.getMessage());
 			throw e;

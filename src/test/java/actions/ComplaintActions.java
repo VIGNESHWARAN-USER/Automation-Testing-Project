@@ -10,101 +10,140 @@ import pages.ComplaintFoPages;
 import utilities.HelperClass;
 
 public class ComplaintActions extends BaseAction {
-	ComplaintFoPages cp;
-	WebDriverWait wait;
-	WebDriver driver;
-	public ComplaintActions(WebDriver driver) {
-		super(driver);
-		cp = new ComplaintFoPages();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		this.driver = driver;
-	}
 
-	public void clickrescp() {
-		try {
-			HelperClass.logger.info("clicking reception button");
-			click(cp.recbtnfo);
-			HelperClass.logger.info("clicking signin button");
-			click(cp.signinfo);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    WebDriverWait wait;
+    WebDriver driver;
 
-	public void clkfo() {
-		try {
-			HelperClass.logger.info("clicking front office button");
-			click(cp.frontofc);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public ComplaintActions(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-	public void clkcom() {
-		try {
-			HelperClass.logger.info("clicking complaint button");
-			click(cp.complaint);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
-	public void addcomp() {
-		try {
-			HelperClass.logger.info("clicking add complaint button");
-			click(cp.addcomp);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public void clickrescp() {
+        try {
+            HelperClass.logger.info("Clicking reception button");
+            click(ComplaintFoPages.getReceptionistButton());
 
-	public void compdet(String complainttype, String source, String phone, String description) {
-		try {
-			Select com = new Select(driver.findElement(cp.comtype));
-			com.selectByVisibleText(complainttype);
-			Select src = new Select(driver.findElement(cp.src));
-			src.selectByVisibleText(source);
-			sendKeys(cp.phone, phone);
-			sendKeys(cp.desc, description);
-			
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            HelperClass.logger.info("Clicking signin button");
+            click(ComplaintFoPages.getSignInButton());
 
-	public void savebtn() {
-		try {
-			HelperClass.logger.info("clicking save button");
-			click(cp.savebtn);
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public String checklistcom() {
-		try {
-			HelperClass.logger.info("checking the list");
-			return getText(cp.checklistcomp);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return "";
-		}
-	}
 
-	public void emptyfields() {
-		try {
-			HelperClass.logger.info("checking whether the fields are empty");
-			isDisplayed(cp.emptyfields);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public void clkfo() {
+        try {
+            HelperClass.logger.info("Clicking front office button");
+            click(ComplaintFoPages.getFrontOffice());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void clkcom() {
+        try {
+            HelperClass.logger.info("Clicking complaint button");
+            click(ComplaintFoPages.getComplaint());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void addcomp() {
+        try {
+            HelperClass.logger.info("Clicking add complaint button");
+            click(ComplaintFoPages.getAddComplaint());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void compdet(String complainttype,
+                        String source,
+                        String phone,
+                        String description) {
+
+        try {
+
+            Select complaintDropdown =
+                    new Select(driver.findElement(
+                            ComplaintFoPages.getComplaintType()));
+
+            complaintDropdown.selectByVisibleText(complainttype);
+
+
+            Select sourceDropdown =
+                    new Select(driver.findElement(
+                            ComplaintFoPages.getSource()));
+
+            sourceDropdown.selectByVisibleText(source);
+
+
+            sendKeys(
+                    ComplaintFoPages.getPhone(),
+                    phone);
+
+
+            sendKeys(
+                    ComplaintFoPages.getDescription(),
+                    description);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void savebtn() {
+        try {
+            HelperClass.logger.info("Clicking save button");
+            click(ComplaintFoPages.getSaveButton());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public String checklistcom() {
+
+        try {
+            HelperClass.logger.info("Checking complaint list");
+
+            return getText(
+                    ComplaintFoPages.getComplaintList());
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+
+    public void emptyfields() {
+
+        try {
+
+            HelperClass.logger.info(
+                    "Checking whether required fields validation is displayed");
+
+            isDisplayed(
+                    ComplaintFoPages.getEmptyFields());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

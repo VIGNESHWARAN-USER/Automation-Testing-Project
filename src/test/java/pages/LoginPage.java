@@ -3,19 +3,110 @@ package pages;
 import org.openqa.selenium.By;
 
 public class LoginPage {
-	public By emailInput = By.xpath("//input[@id = \"email\"]");
-	public By passwordInput = By.xpath("//input[@id = \"password\"]");
-	public By signInButton = By.xpath("//button[@type = \"submit\"]");
-	public By superAdmin = By.xpath("//a[text() = \"Super Admin\"]");
-	public By admin = By.xpath("//a[text() = \"Admin\"]");
-	public By doctor = By.xpath("//a[text() = \"Doctor\"]");
-	public By pharmacist = By.xpath("//a[text() = \"Pharmacist\"]");
-	public By pathologist = By.xpath("//a[text() = \"Pathologist\"]");
-	public By radiologist = By.xpath("//a[text() = \"Radiologist\"]");
-	public By accountant = By.xpath("//a[text() = \"Accountant\"]");
-	public By receptionist = By.xpath("//a[text() = \"Receptionist\"]");
-	public By nurse = By.xpath("//a[text() = \"Nurse\"]");
-	public By usernameErrorMessage = By.xpath("//input[@name='username']/parent::div/descendant::p");
-	public By passwordErrorMessage = By.xpath("//input[@name='password']/parent::div/descendant::p");
-	public By invalidErrorMessage = By.xpath("//div[@class = \"alert alert-danger\"]");
+
+    private static final By emailInput =
+            By.xpath("//input[@id=\"email\"]");
+
+    private static final By passwordInput =
+            By.xpath("//input[@id=\"password\"]");
+
+    private static final By signInButton =
+            By.xpath("//button[@type=\"submit\"]");
+
+    private static final By superAdmin =
+            By.xpath("//a[text()=\"Super Admin\"]");
+
+    private static final By admin =
+            By.xpath("//a[text()=\"Admin\"]");
+
+    private static final By doctor =
+            By.xpath("//a[text()=\"Doctor\"]");
+
+    private static final By pharmacist =
+            By.xpath("//a[text()=\"Pharmacist\"]");
+
+    private static final By pathologist =
+            By.xpath("//a[text()=\"Pathologist\"]");
+
+    private static final By radiologist =
+            By.xpath("//a[text()=\"Radiologist\"]");
+
+    private static final By accountant =
+            By.xpath("//a[text()=\"Accountant\"]");
+
+    private static final By receptionist =
+            By.xpath("//a[text()=\"Receptionist\"]");
+
+    private static final By nurse =
+            By.xpath("//a[text()=\"Nurse\"]");
+
+    private static final By usernameErrorMessage =
+            By.xpath("//input[@name='username']/parent::div/descendant::p");
+
+    private static final By passwordErrorMessage =
+            By.xpath("//input[@name='password']/parent::div/descendant::p");
+
+    private static final By invalidErrorMessage =
+            By.xpath("//div[@class=\"alert alert-danger\"]");
+
+
+    public static By getEmailInput() {
+        return emailInput;
+    }
+
+    public static By getPasswordInput() {
+        return passwordInput;
+    }
+
+    public static By getSignInButton() {
+        return signInButton;
+    }
+
+    public static By getSuperAdmin() {
+        return superAdmin;
+    }
+
+    public static By getAdmin() {
+        return admin;
+    }
+
+    public static By getDoctor() {
+        return doctor;
+    }
+
+    public static By getPharmacist() {
+        return pharmacist;
+    }
+
+    public static By getPathologist() {
+        return pathologist;
+    }
+
+    public static By getRadiologist() {
+        return radiologist;
+    }
+
+    public static By getAccountant() {
+        return accountant;
+    }
+
+    public static By getReceptionist() {
+        return receptionist;
+    }
+
+    public static By getNurse() {
+        return nurse;
+    }
+
+    public static By getUsernameErrorMessage() {
+        return usernameErrorMessage;
+    }
+
+    public static By getPasswordErrorMessage() {
+        return passwordErrorMessage;
+    }
+
+    public static By getInvalidErrorMessage() {
+        return invalidErrorMessage;
+    }
 }
