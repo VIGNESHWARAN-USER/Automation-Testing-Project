@@ -1,4 +1,4 @@
-@Malavicka
+@Malavicka @Language
 Feature: V_MALAVICKA_2026_05_29_SmartHospital_Change_Language_Module
 
   As a hospital staff member
