@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class AppointmentFilterPage {
 
     private static final By receptionistButton =
-            By.xpath("//div[@class='form-bottom']//a[text()='Receptionist']");
+            By.xpath("//button[normalize-space()='Receptionist']");
 
     private static final By submitButton =
             By.xpath("//button[@type='submit']");
