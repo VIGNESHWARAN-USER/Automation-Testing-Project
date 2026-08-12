@@ -7,7 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
 
-		features = "src\\test\\resources\\features",
+		features = "src\\test\\resources\\features\\pathalogist\\BloodIssue.feature",
 		glue = "definitions",
 		
 		plugin = {"pretty",
@@ -17,7 +17,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				"rerun:target/failed-rerun.txt" },
 		monochrome = true,
-		tags = "@Mythily"
+		tags = "@Under_Development_Mythily"
 		)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
