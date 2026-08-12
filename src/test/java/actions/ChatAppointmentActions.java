@@ -10,82 +10,76 @@ import utilities.HelperClass;
 
 public class ChatAppointmentActions extends BaseAction {
 
-	WebDriver driver;
+    WebDriver driver;
+    WebDriverWait wait;
 
-	WebDriverWait wait;
+    public ChatAppointmentActions(WebDriver driver) {
 
-	ChatAppointmentPages cap;
+        super(driver);
 
-	public ChatAppointmentActions(WebDriver driver) {
+        this.driver = driver;
 
-		super(driver);
+        wait = new WebDriverWait(
+                driver,
+                Duration.ofSeconds(10));
+    }
 
-		this.driver = driver;
+    public void clickrecp() {
 
-		wait = new WebDriverWait(
-				driver,
-				Duration.ofSeconds(10));
+        HelperClass.logger.info("Clicking receptionist");
 
-		cap = new ChatAppointmentPages();
-	}
+        click(ChatAppointmentPages.getReceptionistButton());
+    }
 
-	public void clickrecp() {
 
-		HelperClass.logger.info(
-				"clicking receptionist");
+    public void clicksignin() {
 
-		click(cap.recbtn);
-	}
+        HelperClass.logger.info("Clicking signin");
 
-	public void clicksignin() {
+        click(ChatAppointmentPages.getSignInButton());
+    }
 
-		HelperClass.logger.info(
-				"clicking signin");
 
-		click(cap.signin);
-	}
+    public void clickappointment() {
 
-	public void clickappointment() {
+        HelperClass.logger.info("Clicking appointment section");
 
-		HelperClass.logger.info(
-				"clicking appointment section");
+        click(ChatAppointmentPages.getAppointmentButton());
+    }
 
-		click(cap.appbtn);
-	}
 
-	public void clickchaticon() {
+    public void clickchaticon() {
 
-		HelperClass.logger.info(
-				"clicking chat icon");
+        HelperClass.logger.info("Clicking chat icon");
 
-		click(cap.chatbtn);
-	}
+        click(ChatAppointmentPages.getChatButton());
+    }
 
-	public void selectdoctor() {
 
-		HelperClass.logger.info(
-				"selecting doctor");
+    public void selectdoctor() {
 
-		click(cap.person);
-	}
+        HelperClass.logger.info("Selecting doctor");
 
-	public void sendmessage() {
+        click(ChatAppointmentPages.getPerson());
+    }
 
-		HelperClass.logger.info(
-				"sending message");
 
-		sendKeys(
-				cap.msg,
-				"Hello Doctor");
+    public void sendmessage() {
 
-		click(cap.sendmsg);
-	}
+        HelperClass.logger.info("Sending message");
 
-	public boolean verifymessage() {
+        sendKeys(
+                ChatAppointmentPages.getMessage(),
+                "Hello Doctor");
 
-		HelperClass.logger.info(
-				"verifying message");
+        click(ChatAppointmentPages.getSendMessage());
+    }
 
-		return isDisplayed(cap.check);
-	}
+
+    public boolean verifymessage() {
+
+        HelperClass.logger.info("Verifying message");
+
+        return isDisplayed(ChatAppointmentPages.getCheck());
+    }
 }

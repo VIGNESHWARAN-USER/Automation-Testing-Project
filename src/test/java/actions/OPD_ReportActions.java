@@ -2,7 +2,6 @@ package actions;
 import java.io.File;
 import java.time.Duration;
 import java.util.Map;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,19 +12,18 @@ import pages.OPDPage;
 import utilities.HelperClass;
 
 public class OPD_ReportActions extends BaseAction {
-    OPDPage opdPage;
+    
     WebDriverWait wait;
 
     public OPD_ReportActions(WebDriver driver) {
         super(driver);
-        opdPage = new OPDPage(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        enableHeadlessDownloads(); // <-- unlock downloads in headless mode
+        enableHeadlessDownloads(); 
     }
 
     private void enableHeadlessDownloads() {
         String downloadPath = System.getProperty("user.dir") + File.separator + "downloads";
-        new File(downloadPath).mkdirs(); // create folder if it doesn't exist
+        new File(downloadPath).mkdirs(); 
         ((ChromeDriver) driver).executeCdpCommand(
             "Browser.setDownloadBehavior",
             Map.of(
@@ -37,28 +35,30 @@ public class OPD_ReportActions extends BaseAction {
     }
 
     public void navigateToOPDOutPatientPage() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.opdButton));
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOpdButton()));
         HelperClass.logger.info("opening ODP page");
-        jsClick(opdPage.opdButton);
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.opdOutPatientNavLink));
+        jsClick(OPDPage.getOpdButton());
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOpdOutPatientNavLink()));
         HelperClass.logger.info("clicking opdOutPatientNavLink ");
     }
 
     public void clickShowIcon() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.opdOutPatientNavLink));
-        jsClick(opdPage.opdOutPatientNavLink);
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getOpdOutPatientNavLink()));
+        jsClick(OPDPage.getOpdOutPatientNavLink());
+        HelperClass.logger.info("clicking ID Link");
     }
 
     public void clickVisitsTab() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.visitsTab));
-        WebElement tab = driver.findElement(opdPage.visitsTab);
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getVisitsTab()));
+        WebElement tab = driver.findElement(OPDPage.getVisitsTab());
         jsClickElement(tab);
+        HelperClass.logger.info("clicking visits tab");
     }
 
     public void clickPrintIcon() {
-        wait.until(ExpectedConditions.elementToBeClickable(opdPage.printIcon));
-        HelperClass.logger.info("Clicking print icon");
-        click(opdPage.printIcon);
+        wait.until(ExpectedConditions.elementToBeClickable(OPDPage.getPrintIcon()));
+        HelperClass.logger.info("Clicking PDF icon");
+        click(OPDPage.getPrintIcon());
     }
 
     public boolean isReportDownloadedSuccessfully() {

@@ -29,7 +29,6 @@ public class BedStatusAppointmentStepDefinition {
 	@Then("user is able to see the details of the patient")
 	public void user_is_able_to_see_the_details_of_the_patient() {
 		// Write code here that turns the phrase above into concrete actions
-
 		Assert.assertTrue(bsa.check());
 	}
 
