@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 public class BloodComponentPage {
 
     private static final By billing =
-            By.xpath("//span[text()=' Billing']");
+            By.xpath("//span[normalize-space()='Billing']");
 
     private static final By bloodComponent =
-            By.xpath("//p[text()='Blood Component Issue']");
+            By.xpath("//a[@href='https://demo.smart-hospital.in/admin/bill/issuecomponent']");
 
     private static final By details =
             By.xpath("(//a[i[@class='fa fa-reorder']])[1]");

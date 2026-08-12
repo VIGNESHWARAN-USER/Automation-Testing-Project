@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class BedStatusPages {
 
-    private static final By receptionistButton =By.xpath("//div[@class='btn-group btn-group-justified']//child::a[contains(text(),'Reception')]");
+    private static final By receptionistButton =By.xpath("//button[normalize-space()='Receptionist']");
     private static final By signInButton =By.xpath("//form//child::button[@type='submit']");
     private static final By appointmentButton =
             By.xpath("//span[normalize-space()='Appointment']");

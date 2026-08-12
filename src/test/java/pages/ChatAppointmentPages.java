@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class ChatAppointmentPages {
 
     private static final By receptionistButton =
-            By.xpath("//a[normalize-space()='Receptionist']");
+            By.xpath("//button[normalize-space()='Receptionist']");
 
     private static final By signInButton =
             By.xpath("//button[@type='submit']");
