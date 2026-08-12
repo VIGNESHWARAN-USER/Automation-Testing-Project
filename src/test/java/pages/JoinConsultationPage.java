@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 public class JoinConsultationPage {
 
     private static final By liveConsultation =
-            By.xpath("//li[contains(@class,\"treeview\")][19]");
+            By.xpath("//li[contains(@class,\"nav-item\")][29]");
 
     private static final By liveConsultationOption =
-            By.xpath("//li[contains(@class,\"treeview\")][19]/ul/li/a");
+            By.xpath("//li[contains(@class,\"nav-item\")][29]/ul/li/a");
 
     private static final By tableBody =
             By.xpath("//div/table/tbody/tr");
