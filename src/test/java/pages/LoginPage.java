@@ -5,40 +5,40 @@ import org.openqa.selenium.By;
 public class LoginPage {
 
     private static final By emailInput =
-            By.xpath("//input[@id=\"email\"]");
+            By.xpath("//input[@id=\"al-username\"]");
 
     private static final By passwordInput =
-            By.xpath("//input[@id=\"password\"]");
+            By.xpath("//input[@id=\"al-password\"]");
 
     private static final By signInButton =
             By.xpath("//button[@type=\"submit\"]");
 
     private static final By superAdmin =
-            By.xpath("//a[text()=\"Super Admin\"]");
+            By.xpath("//button[text()=\"Super Admin\"]");
 
     private static final By admin =
-            By.xpath("//a[text()=\"Admin\"]");
+            By.xpath("//button[text()=\"Admin\"]");
 
     private static final By doctor =
-            By.xpath("//a[text()=\"Doctor\"]");
+            By.xpath("//button[text()=\"Doctor\"]");
 
     private static final By pharmacist =
-            By.xpath("//a[text()=\"Pharmacist\"]");
+            By.xpath("//button[text()=\"Pharmacist\"]");
 
     private static final By pathologist =
-            By.xpath("//a[text()=\"Pathologist\"]");
+            By.xpath("//button[text()=\"Pathologist\"]");
 
     private static final By radiologist =
-            By.xpath("//a[text()=\"Radiologist\"]");
+            By.xpath("//button[text()=\"Radiologist\"]");
 
     private static final By accountant =
-            By.xpath("//a[text()=\"Accountant\"]");
+            By.xpath("//button[text()=\"Accountant\"]");
 
     private static final By receptionist =
-            By.xpath("//a[text()=\"Receptionist\"]");
+            By.xpath("//button[text()=\"Receptionist\"]");
 
     private static final By nurse =
-            By.xpath("//a[text()=\"Nurse\"]");
+            By.xpath("//button[text()=\"Nurse\"]");
 
     private static final By usernameErrorMessage =
             By.xpath("//input[@name='username']/parent::div/descendant::p");
@@ -47,7 +47,7 @@ public class LoginPage {
             By.xpath("//input[@name='password']/parent::div/descendant::p");
 
     private static final By invalidErrorMessage =
-            By.xpath("//div[@class=\"alert alert-danger\"]");
+            By.xpath("//div[@class=\"alert alert-danger mt-3\"]");
 
 
     public static By getEmailInput() {
