@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 public class JoinConsultationPage {
 
     private static final By liveConsultation =
-            By.xpath("//li[contains(@class,\"nav-item\")][29]");
+            By.xpath("//li[contains(@class,\"nav-item\")][19]");
 
     private static final By liveConsultationOption =
-            By.xpath("//li[contains(@class,\"nav-item\")][29]/ul/li/a");
+            By.xpath("//li[contains(@class,\"nav-item\")][19]/ul/li/a");
 
     private static final By tableBody =
             By.xpath("//div/table/tbody/tr");
@@ -17,7 +17,7 @@ public class JoinConsultationPage {
             By.xpath("//div[@id=\"modal-chkstatus\"]");
 
     private static final By startNow =
-            By.xpath("//a[contains(@href,\"zoom\") and @class=\"btn btn-outline-success btn-sm pull-right\"]");
+            By.xpath("//a[contains(@href,\"zoom\")]/i[@class =\"fa fa-video-camera\"]");
 
     private static final By addButton =
             By.xpath("//div[@class=\"box-tools pull-right box-tools-md\"]/button[1]");
@@ -151,6 +151,6 @@ public class JoinConsultationPage {
     }
 
     public static By getActionButtons(int rowIndex) {
-        return By.xpath("//tbody/tr[" + rowIndex + "]/td[9]/a");
+        return By.xpath("//tbody/tr[" + rowIndex + "]/td[9]/div/a");
     }
 }

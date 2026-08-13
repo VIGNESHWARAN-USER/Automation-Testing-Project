@@ -47,7 +47,7 @@ public class LoginPage {
             By.xpath("//input[@name='password']/parent::div/descendant::p");
 
     private static final By invalidErrorMessage =
-            By.xpath("//div[@class=\"alert alert-danger\"]");
+            By.xpath("//div[@class=\"alert alert-danger mt-3\"]");
 
 
     public static By getEmailInput() {
