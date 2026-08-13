@@ -14,13 +14,13 @@ public class DownloadPdfpage {
             By.xpath("//span[normalize-space()='Appointment']");
 
     private static final By todayAppointment =
-            By.xpath("(//ul[@class='nav nav-tabs navlistscroll']//li)[1]");
+            By.xpath("//button[@data-bs-target='#tab_1']");
 
     private static final By upcomingAppointment =
-            By.xpath("(//ul[@class='nav nav-tabs navlistscroll']//li)[2]");
+            By.xpath("//button[@data-bs-target='#tab_2']");
 
     private static final By oldAppointment =
-            By.xpath("(//ul[@class='nav nav-tabs navlistscroll']//li)[3]");
+            By.xpath("//button[@data-bs-target='#tab_3']");
 
     private static final By todayExcel =
             By.xpath("(//a[@title='Excel'])[1]");

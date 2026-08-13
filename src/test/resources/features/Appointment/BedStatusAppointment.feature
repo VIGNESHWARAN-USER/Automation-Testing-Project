@@ -1,5 +1,5 @@
 @Muhindhar
-Feature: Muhindhar_27-05-2026_Checking the status of bed as a receptionist
+Feature: Muhindhar_13-08-2026(Updated)_Checking the status of bed as a receptionist
   Description:
   As a receptionist user I need to check the availability of the bed
 
