@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 public class DashboardPage {
 
     private static final By profileIcon =
-            By.xpath("//img[@class=\"topuser-image\"]");
+            By.xpath("//div[@class=\"tb-signet-text\"]");
 
     private static final By role =
-            By.xpath("//div[@class=\"sstopuser-test\"]/h5");
+            By.xpath("//div[@class=\"text-muted small\"]");
 
 
     public static By getProfileIcon() {
