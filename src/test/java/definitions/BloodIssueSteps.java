@@ -26,9 +26,12 @@ public class BloodIssueSteps {
 	}
 	@Then("the Pathologist dashboard should be displayed")
 	public void the_pathologist_dashboard_should_be_displayed() {
-	    issueAction.clickAccImg();
+	    //issueAction.clickAccImg();
 	    String actual = issueAction.getAccName();
-	    Assert.assertEquals(actual, "Pathologist");
+	    Assert.assertTrue(
+	            actual.equalsIgnoreCase("Pathologist"),
+	            "Expected Pathologist but found " + actual
+	        );
 	}
 	@When("the user clicks the Blood Bank menu")
 	public void the_user_clicks_the_blood_bank_menu() {

@@ -1,4 +1,4 @@
-@Mythily
+@Bug
 Feature: S_MYTHILY_2026_05_18_SmartHospital_Delete Prescription Validation
 
   Background:

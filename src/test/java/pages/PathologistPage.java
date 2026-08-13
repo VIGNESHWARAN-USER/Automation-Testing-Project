@@ -17,40 +17,40 @@ public class PathologistPage {
             By.xpath("//a[@href=\"https://demo.smart-hospital.in/admin/notification\"]/child::span");
 
     private static final By sendSms =
-            By.xpath("//a[@href=\"https://demo.smart-hospital.in/admin/notification/add\"]/following-sibling::a");
+            By.xpath("//a[@href='https://demo.smart-hospital.in/admin/mailsms/compose']");
 
     private static final By title =
-            By.xpath("(//div[@class='form-group']/child::input)[1]");
+            By.xpath("//div/*/input[@name='group_title']");
 
     private static final By tempId =
-            By.xpath("(//label[text()='Template Id']/following-sibling::input)[1]");
+            By.xpath("//div/*/input[@name='group_template_id']");
 
     private static final By sms =
-            By.xpath("(//label[@class='checkbox-inline']/child::input)[1]");
+            By.xpath("(//div/*/input[@value='sms'])[1]");
 
     private static final By mobileApp =
-            By.xpath("(//label[@class='checkbox-inline']/input[@value='push'])[1]");
+            By.xpath("(//div/*/input[@value='push'])[1]");
 
     private static final By message =
-            By.xpath("//label[text()='Message']/following-sibling::textarea[@name='group_message']");
+            By.xpath("//div/*/textarea[@name='group_message']");
 
     private static final By dtr =
-            By.xpath("//input[@value='3']");
+            By.xpath("//div/*/input[@value='3']");
 
     private static final By nurse =
-            By.xpath("//input[@value='9']");
+            By.xpath("//div/*/input[@value='9']");
 
     private static final By send =
-            By.xpath("(//div[@class='pull-right']/child::button)[1]");
+            By.xpath("//div/button[@class='btn btn-primary submit_group']");
 
     private static final By successMessage =
             By.xpath("//div[text()='Record Saved Successfully']");
 
     private static final By emptyError =
-            By.xpath("//div[@class='toast-message']//p[text()='Message To field is required']");
+            By.xpath("//div[@class='sh-bubble-msg']/p[normalize-space()='Message To field is required']");
 
     private static final By missingFieldError =
-            By.xpath("//div[@class='toast-message']//p[text()='Send Through field is required']");
+            By.xpath("//div[@class='sh-bubble-msg']/p[normalize-space()='Send Through field is required']");
 
 
     public static By getPathologistBtn() {

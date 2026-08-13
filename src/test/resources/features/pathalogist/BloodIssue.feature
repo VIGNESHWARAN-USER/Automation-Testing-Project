@@ -1,5 +1,5 @@
-@Under_Development_Mythily
-Feature: Blood Issue Validation - Smart Hospital
+@Mythily
+Feature: S_MYTHILY_2026_08_13_Blood Issue Validation - Smart Hospital
 
   Background:
     Given the user launches the application

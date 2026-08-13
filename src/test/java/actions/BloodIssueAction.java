@@ -10,9 +10,9 @@ public class BloodIssueAction extends BaseAction{
         super(driver);
         this.issuePage = new BloodIssuePage(driver);
     }
-    public void clickAccImg() {
+    /*public void clickAccImg() {
     	click(issuePage.profile);
-    }
+    }*/
     public String getAccName() {
     	return getText(issuePage.pathologylog);
     }
