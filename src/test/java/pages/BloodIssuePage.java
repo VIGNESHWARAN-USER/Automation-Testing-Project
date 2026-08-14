@@ -8,11 +8,11 @@ public class BloodIssuePage {
     public BloodIssuePage(WebDriver driver) {
         this.driver = driver;
     }
-    public By profile = By.xpath("//img[@class='topuser-image']");
-    public By pathologylog = By.xpath("//h5[text()='Pathologist']");
+    //public By profile = By.xpath("//img[@class='topuser-image']");
+    public By pathologylog = By.xpath("//span[@class='tb-signet-role']");
     public By bloodbank = By.xpath("//a[@href='https://demo.smart-hospital.in/admin/bloodbankstatus/']");
-    public By blood = By.xpath("(//a[@onclick='getBloodListTable(this.id)'])[8]");
-    public By status = By.xpath("//h3[text()='Blood Bank Status']");
+    public By status = By.xpath("//div[@class='bb-card-hdr']/*[1]");
+    public By blood = By.xpath("//div[@class='bb-pill-list']/div[8]");
     public By issue = By.xpath("//button[@onclick='bloodIssueModal(8,1138)']");
-    public By form = By.xpath("(//div[@class='box-body'])[1]");
+    public By form = By.xpath("(//div[@class='sh-card-header'])[8]");
 }

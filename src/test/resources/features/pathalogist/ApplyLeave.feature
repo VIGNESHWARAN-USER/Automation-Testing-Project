@@ -1,4 +1,4 @@
-@Under_Development_Mythily
+@Mythily
 Feature: S_MYTHILY_2026_06_01_Applying for Leave Validation - Smart Hospital
 
   Background:

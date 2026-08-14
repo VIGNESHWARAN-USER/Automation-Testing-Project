@@ -16,12 +16,12 @@ public class PrescriptionPage {
 
     private static final By patientSearchBox =
             By.xpath("//label//input[@type='search']");
+    
+    private static final By click128Tab =
+            By.xpath("//tr[@class='odd']//a[text()='IPDN128']");
 
     private static final By prescriptionTab =
             By.xpath("(//a[@href='#prescription'])[1]");
-
-    private static final By click128Tab =
-            By.xpath("//tr[@class='odd']//a[text()='IPDN128']");
 
     private static final By prescriptionButton =
             By.xpath("//li//a[@href='#prescription']");
@@ -31,7 +31,6 @@ public class PrescriptionPage {
 
     private static final By prescriptionTable =
             By.xpath("//table[@id='DataTables_Table_2']");
-
 
     private static final By headerNote =
             By.xpath(
