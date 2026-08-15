@@ -1,4 +1,4 @@
-@Mythily
+@Bug
 Feature: S_MYTHILY_2026_05_14_SmartHospital_Add Prescription Validation
 
    Background:

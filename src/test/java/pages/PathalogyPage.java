@@ -8,22 +8,22 @@ public class PathalogyPage {
             By.xpath("//a[text()='Login']");
 
     private static final By userLogin =
-            By.xpath("//p[@style='margin-top: 20px;']//a[@href='https://demo.smart-hospital.in/site/userlogin']");
+            By.xpath("//a[@href='https://demo.smart-hospital.in/site/userlogin']");
 
     private static final By signup =
             By.xpath("//button[@type='submit'] | //button[contains(text(),'Sign')]");
 
     private static final By pathologyMenu =
-            By.xpath("//a[normalize-space()='Pathology']");
+            By.xpath("//li[@class]/a[normalize-space()='Pathology']");
 
     private static final By search =
-            By.xpath("//input[@type='search' or @placeholder='Search...']");
+            By.xpath("//div/*/input[@type='search' or @placeholder='Search...']");
 
     private static final By filter =
             By.xpath("//div[text()='Records: 1 to 1 of 1 (filtered from 14 total records)']");
 
     private static final By table =
-            By.xpath("//table//tr");
+            By.xpath("//table/tbody/tr");
 
     private static final By notFound =
             By.xpath("//tr[@class='odd']//td[text()='No matching records found']");
@@ -32,7 +32,7 @@ public class PathalogyPage {
     // Payment
 
     private static final By payButton =
-            By.xpath("//td[contains(@class,'text-right')]//button[contains(@onclick,'payModal')]");
+            By.xpath("//table/tbody/tr/td/div/button[@type='button']");
 
     private static final By payAmount =
             By.xpath("//input[@id='amount_total_paid']");

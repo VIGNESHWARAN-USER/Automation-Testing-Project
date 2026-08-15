@@ -14,7 +14,7 @@ public class CallLogFrontofcPages {
             By.xpath("//li//a//span[text()='Front Office'] | //span[contains(text(),'Front Office')] | //li/a/span[contains(.,'Front Office')]");
 
     private static final By phoneCallLog =
-            By.xpath("//div[@class='box-tools pull-right']//a[@href='https://demo.smart-hospital.in/admin/generalcall']");
+            By.xpath("//div[@class='d-flex gap-2 align-items-center flex-wrap float-end']/child::a[2]");
 
     private static final By addLog =
             By.xpath("//a[@class='btn btn-primary btn-sm call_log']");
@@ -32,7 +32,7 @@ public class CallLogFrontofcPages {
             By.xpath("//form[@id='formadd']//input[@name='call_dureation']");
 
     private static final By note =
-            By.xpath("//label[text()='Note']//following-sibling::textarea[@id='description']");
+            By.xpath("//textarea[@id='note']");
 
     private static final By incoming =
             By.xpath("//form[@id='formadd']//input[@name='call_type' and @value='Incoming']");
@@ -44,10 +44,10 @@ public class CallLogFrontofcPages {
             By.xpath("//button[@id='formaddbtn']");
 
     private static final By checklist =
-            By.xpath("//h3[@class='box-title titlefix']");
+            By.xpath("//div[@class='table-responsive mailbox-messages']");
 
     private static final By error =
-            By.xpath("//h3[@class='box-title titlefix']");
+            By.xpath("//div[@class='table-responsive mailbox-messages']");
 
     public static By getReceptionistButton() { return receptionistButton; }
 
