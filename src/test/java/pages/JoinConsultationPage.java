@@ -17,7 +17,7 @@ public class JoinConsultationPage {
             By.xpath("//div[@id=\"modal-chkstatus\"]");
 
     private static final By startNow =
-            By.xpath("//a[contains(@href,\"zoom\")]/i[@class =\"fa fa-video-camera\"]");
+            By.xpath("//a[contains(@href , 'zoom') and contains(@class , 'join-btn')]");
 
     private static final By addButton =
             By.xpath("//div[@class=\"box-tools pull-right box-tools-md\"]/button[1]");
@@ -47,7 +47,7 @@ public class JoinConsultationPage {
             By.cssSelector("textarea#description");
 
     private static final By addCredentialButton =
-            By.xpath("//div[@class=\"box-tools pull-right box-tools-md\"]/button[2]");
+            By.xpath("//h3[contains(text(), 'Live Consult')]/following-sibling::div/button[2]");
 
     private static final By zoomApiKeyField =
             By.xpath("//input[@id=\"zoom_api_key\"]");
