@@ -1,5 +1,6 @@
-@Updating
-Feature:Muhindhar_14-08-2026(Updated)_To check the call log in the front office module
+@Muhindhar
+Feature: Muhindhar_17-08-2026(Updated)_To check the call log in the front office module
+
 Description: As a receptionist user i want to add call logs and see all the call logs
 
   Background:
