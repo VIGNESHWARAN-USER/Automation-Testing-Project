@@ -11,6 +11,9 @@ Description: As a receptionist user the Notice board should be visible to the re
   @noticeboard
   Scenario: Visiblity of notices
     And user clicks on the notice displayed
-    Then user should be able to see the list of notices 
-    
-    
+    Then user should be able to see the list of notices
+
+  @InvalidNoticeBoard
+  Scenario: Verify notice board when no notice is selected
+    And user does not click on any notice
+    Then user should not be able to view the notice details
